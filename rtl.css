@@ -1,0 +1,318 @@
+/*
+Theme Name: Dan
+
+Adding support for languages written in a Right To Left (RTL) direction is easy -
+it's just a matter of overwriting all the horizontal positioning attributes
+of your CSS stylesheet in a separate stylesheet file named rtl.css.
+
+https://codex.wordpress.org/Right-to-Left_Language_Support
+
+*/
+
+
+body {
+	direction: rtl;
+	unicode-bidi: embed;
+}
+
+blockquote {
+	padding: 0 1.5em 0 0;
+	border-right: 4px solid #666;
+	border-left: 0;
+}
+
+li > ul,
+li > ol {
+	margin-right: 1.5em;
+	margin-left: 0;
+}
+
+/* Layout */
+
+@media screen and (min-width: 768px) {
+	#secondary {
+		margin-right: 4em;
+		margin-left: 0;
+	}
+}
+
+/* Accessibility */
+
+.screen-reader-text:focus {
+	right: 5px;
+	left: auto;
+}
+
+/* Forms */
+
+input[type="radio"],
+input[type="checkbox"] {
+	margin-right: 0;
+	margin-left: 0.5em;
+}
+
+/* Custom logo */
+
+.custom-logo-link img {
+	margin-right: 0;
+	margin-left: 0.5rem;
+}
+
+@media screen and (min-width: 768px) {
+	.custom-logo-link img {
+		margin-right: 0;
+		margin-left: 1rem;
+	}
+}
+
+/* Custom header */
+
+.dan-front-page.has-header-image .site-header,
+.dan-front-page.has-header-video .site-header {
+    right: 0;
+    left: auto;
+}
+
+
+.site-description {
+	right: 50%;
+	left: auto;
+}
+
+.has-header-video .wp-custom-header iframe,
+.has-header-video .wp-custom-header video,
+.has-header-video .wp-custom-header iframe {
+	right: 0;
+	left: auto;
+}
+
+.wp-custom-header .wp-custom-header-video-button {
+	right: 16px;
+	left: auto;
+}
+
+/* Navigation */
+
+.main-navigation ul {
+	padding-right: 0;
+}
+
+.main-navigation .menu-item-has-children > a {
+	margin-right: 0;
+	margin-left: 48px;
+}
+
+.dropdown-toggle {
+	right: auto;
+	left: 0;
+}
+
+.dropdown-toggle::after {
+	right: 0;
+	left: auto;
+	border-right-width: 1px;
+	border-left-width: 0;
+}
+
+@media screen and (max-width: 767px) {
+	.main-navigation ul ul {
+		margin-right: 0.875em;
+		margin-left: 0;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.main-navigation .menu-item-has-children > a::after {
+		right: auto;
+		left: 0.5em;
+	}
+
+	.main-navigation ul ul .menu-item-has-children > a::after {
+		content: "\f104";
+	}
+
+	.main-navigation .menu-item-has-children > a {
+		margin: 0;
+		padding-right: 1em;
+		padding-left: 2.5em;
+	}
+
+	.main-navigation ul ul {
+		right: -999em;
+		left: auto;
+	}
+
+	.main-navigation ul ul ul {
+		right: -999em;
+		left: auto;
+	}
+
+	.main-navigation ul li:hover > ul,
+	.main-navigation ul li.focus > ul {
+		right: auto;
+		left: 0;
+	}
+
+	.main-navigation ul ul li:hover > ul,
+	.main-navigation ul ul li.focus > ul {
+		right: 100%;
+		left: auto;
+	}
+}
+
+/* Pagination */
+
+.prev.page-numbers {
+	float: right;
+}
+
+.next.page-numbers {
+	float: left;
+}
+
+.prev.page-numbers .fa,
+.next.page-numbers .fa {
+	-webkit-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+
+.nav-previous {
+	float: right;
+	text-align: right;
+}
+
+.nav-next {
+	float: left;
+	text-align: left;
+}
+
+.nav-previous .fa {
+	margin-right: 0;
+	margin-left: 0.5em;
+	-webkit-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+
+.nav-next .fa {
+	margin-right: 0.5em;
+	margin-left: 0;
+	-webkit-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+
+/* Sticky post */
+
+.sticky-post .fa {
+	margin-right: 0;
+	margin-left: 0.5em;
+}
+
+/* Blog Entries */
+
+.entry-meta .byline {
+	margin-right: 1em;
+	margin-left: 0;
+}
+
+.entry-footer span + span {
+	margin-right: 1em;
+	margin-left: 0;
+}
+
+.entry-footer .fa {
+	margin-right: 0;
+	margin-left: 0.375em;
+}
+
+.entry-footer .cat-links a + a,
+.entry-footer .tags-links a + a {
+	margin-right: 0.5em;
+	margin-left: 0;
+}
+
+.more-link {
+	margin-right: auto;
+	margin-left: 0;
+}
+
+/* Comments */
+
+.comment-list .children > li {
+	padding-right: 0.875em;
+	padding-left: 0;
+}
+
+.comment-author .avatar {
+	float: right;
+	margin-right: 0;
+	margin-left: 0.875em;
+}
+
+.comment-metadata a.comment-edit-link {
+	margin-right: 1em;
+	margin-left: 0;
+}
+
+.form-submit {
+	text-align: left;
+}
+
+.comment-content ul,
+.comment-content ol {
+	margin: 0 1.25em 1.5em 0;
+}
+
+/* Widgets */
+
+.widget {
+	margin-right: 0.25em;
+	margin-left: 0;
+}
+
+.widget .widget-title {
+	margin-right: -0.25em;
+	margin-left: 0;
+}
+
+.widget ul li li {
+	padding-right: 1.5rem;
+	padding-left: 0;
+}
+
+.widget_text ul,
+.widget_text ol {
+	padding-right: 40px;
+	padding-left: 0;
+}
+
+.widget_text li > ul,
+.widget_text li > ol {
+	padding-right: 40px;
+	padding-left: 0;
+}
+
+.widget_text ul li li {
+	padding-right: 0;
+}
+
+input[type="search"].search-field {
+	width: 100%;
+	padding: 0.5em 0.5em 0.5em 4.5em;
+}
+
+.search-form .search-submit {
+	right: auto;
+	left: 3px;
+}
+
+.widget .tagcloud a,
+.widget.widget_tag_cloud a,
+.wp_widget_tag_cloud a {
+	margin: 0 0 0.75em 0.375em;
+}
+
+/* Gallery */
+
+.gallery-item {
+	padding: 0 0 0 1em;
+}
