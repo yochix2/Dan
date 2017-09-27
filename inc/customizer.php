@@ -33,13 +33,6 @@ function dan_customize_register( $wp_customize ) {
 		'priority' => 130, // Before Additional CSS.
 	) );
 
-	/**
-	 * Filter number of front page sections in Twenty Seventeen.
-	 *
-	 * @since Twenty Seventeen 1.0
-	 *
-	 * @param int $num_sections Number of front page sections.
-	 */
 	$num_sections = apply_filters( 'dan_front_page_sections', 4 );
 
 	for ( $i = 1; $i <= $num_sections; $i++ ) {
@@ -71,7 +64,7 @@ add_action( 'customize_register', 'dan_customize_register' );
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function dan_customize_preview_js() {
-	wp_enqueue_script( 'dan_customizer', get_template_directory_uri() . '/assets/js/customizer.js', array( 'customize-preview' ), '20151215', true );
+	wp_enqueue_script( 'dan_customizer', get_template_directory_uri() . '/assets/js/customizer.js', array( 'customize-preview' ), false, true );
 }
 add_action( 'customize_preview_init', 'dan_customize_preview_js' );
 
@@ -80,7 +73,7 @@ add_action( 'customize_preview_init', 'dan_customize_preview_js' );
  *
  * @return void
  */
-function twentyseventeen_customize_partial_blogname() {
+function dan_customize_partial_blogname() {
 	bloginfo( 'name' );
 }
 
@@ -89,7 +82,7 @@ function twentyseventeen_customize_partial_blogname() {
  *
  * @return void
  */
-function twentyseventeen_customize_partial_blogdescription() {
+function dan_customize_partial_blogdescription() {
 	bloginfo( 'description' );
 }
 

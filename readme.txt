@@ -3,7 +3,6 @@
 Author: Yochi
 Tags: two-columns, right-sidebar, accessibility-ready, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog
 Tested up to: 4.8
-Stable tag: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 

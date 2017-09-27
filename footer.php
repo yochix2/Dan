@@ -16,11 +16,16 @@
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="footer-inner">
 
-			<?php if ( is_active_sidebar( 'footer-1' ) ) : ?>
+			<?php if ( is_active_sidebar( 'footer-1' ) || is_active_sidebar( 'footer-2' ) ) : ?>
 
 			<aside class="footer-widget" role="complementary">
 				<div class="footer-widget-inner">
-					<?php dynamic_sidebar( 'footer-1' ); ?>
+					<div class="widget-column footer-widget-1">
+						<?php dynamic_sidebar( 'footer-1' ); ?>
+					</div>
+					<div class="widget-column footer-widget-2">
+						<?php dynamic_sidebar( 'footer-2' ); ?>
+					</div>
 				</div><!-- .footer-widget-inner -->
 			</aside><!-- .footer-widget -->
 
@@ -35,7 +40,7 @@
 					<span class="sep"> | </span>
 					<?php
 					/* translators: 1: Theme name, 2: Theme author. */
-					printf( esc_html__( 'Theme: %1$s by %2$s.', 'dan' ), 'dan', '<a href="https://yochix2.com/">Yochi</a>' );
+					printf( esc_html__( 'Theme: %1$s by %2$s.', 'dan' ), 'dan', '<a href="https://profiles.wordpress.org/yochix2">Yochi</a>' );
 					?>
 				</div><!-- .site-info-inner -->
 			</div><!-- .site-info -->

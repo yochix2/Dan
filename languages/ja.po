@@ -1,11 +1,11 @@
-# Dan v1.0.0
+# Dan v1.0.1
 # Copyright (C) 2017 Yochi
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Dan v1.0.0\n"
+"Project-Id-Version: Dan v1.0.1\n"
 "Report-Msgid-Bugs-To: Yochi <info@yochix2.com>\n"
-"POT-Creation-Date: 2017-09-18 01:24+0900\n"
+"POT-Creation-Date: 2017-09-27 15:39+0900\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Yochi <info@yochix2.com>\n"
 "Language-Team: Yochi\n"
@@ -20,7 +20,7 @@ msgstr ""
 "esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;"
 "_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
 "X-Poedit-Basepath: ..\n"
-"X-Generator: Poedit 2.0.3\n"
+"X-Generator: Poedit 2.0.4\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: 404.php:17
@@ -46,29 +46,29 @@ msgstr "ページ"
 #: comments.php:34
 #, php-format
 msgid "One thought on &ldquo;%1$s&rdquo;"
-msgstr "「%1$s」への1件のフィードバック"
+msgstr "「%1$s」への1件のコメント"
 
 #: comments.php:40
 #, php-format
 msgctxt "comments title"
 msgid "%1$s thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] "「%2$s」への%1$s件のフィードバック"
+msgstr[0] "「%2$s」への%1$s件のコメント"
 
 #: comments.php:66
 msgid "Comments are closed."
 msgstr "コメントは受け付けていません。"
 
-#: footer.php:31
+#: footer.php:36
 msgid "https://wordpress.org/"
 msgstr ""
 
-#: footer.php:33
+#: footer.php:38
 #, php-format
 msgid "Proudly powered by %s"
 msgstr "Proudly powered by %s"
 
-#: footer.php:38
+#: footer.php:43
 #, php-format
 msgid "Theme: %1$s by %2$s."
 msgstr "Theme: %1$s by %2$s."
@@ -81,19 +81,30 @@ msgstr "プライマリーメニュー"
 msgid "Sidebar"
 msgstr "サイドバー"
 
-#: functions.php:120 functions.php:130
-msgid "Add widgets here."
-msgstr "ここにウィジェットを追加。"
+#: functions.php:120
+msgid ""
+"Add widgets here to appear in your sidebar on blog posts and archive pages."
+msgstr ""
+"ブログ投稿とアーカイブページのサイドバーに表示するウィジェットをここに追加し"
+"てください。"
 
 #: functions.php:128
-msgid "Footer"
-msgstr "フッター"
+msgid "Footer 1"
+msgstr "フッター 1"
 
-#: functions.php:162
+#: functions.php:130 functions.php:140
+msgid "Add widgets here to appear in your footer."
+msgstr "フッターに表示するウィジェットをここに追加します。"
+
+#: functions.php:138
+msgid "Footer 2"
+msgstr "フッター 2"
+
+#: functions.php:172
 msgid "expand child menu"
 msgstr "サブメニューを展開"
 
-#: functions.php:163
+#: functions.php:173
 msgid "collapse child menu"
 msgstr "サブメニューを閉じる"
 
@@ -101,24 +112,20 @@ msgstr "サブメニューを閉じる"
 msgid "Skip to content"
 msgstr "コンテンツへスキップ"
 
-#: header.php:45
+#: header.php:46
 msgid "Menu"
 msgstr "Menu"
-
-#: header.php:60
-msgid "Home"
-msgstr "ホーム"
 
 #: inc/customizer.php:32
 msgid "Theme Options"
 msgstr "テーマオプション"
 
-#: inc/customizer.php:53
+#: inc/customizer.php:46
 #, php-format
 msgid "Front Page Section %d Content"
 msgstr "フロントページセクション %d のコンテンツ"
 
-#: inc/customizer.php:54
+#: inc/customizer.php:47
 msgid ""
 "Select pages to feature in each area from the dropdowns. Add an image to a "
 "section by setting a featured image in the page editor. Empty sections will "
@@ -146,11 +153,6 @@ msgstr "フォーマット"
 #: inc/template-tags.php:64
 msgid "Categories"
 msgstr "カテゴリー"
-
-#: inc/template-tags.php:70
-msgctxt "list item separator"
-msgid " "
-msgstr ""
 
 #: inc/template-tags.php:73
 msgid "Tags"
@@ -223,6 +225,12 @@ msgstr "お探しのコンテンツが見つかりません。検索をお試し
 #: template-parts/content-page.php:28 template-parts/content.php:51
 msgid "Pages:"
 msgstr "ページ:"
+
+#~ msgid "Add widgets here."
+#~ msgstr "ここにウィジェットを追加。"
+
+#~ msgid "Home"
+#~ msgstr "ホーム"
 
 #~ msgid ""
 #~ "<span class=\"fa fa-clock-o\" aria-hidden=\"true\"></span><span class="

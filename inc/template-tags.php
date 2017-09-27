@@ -58,18 +58,18 @@ function dan_entry_footer() {
 	// Hide category and tag text for pages.
 	if ( 'post' === get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */
-		$categories_list = get_the_category_list( esc_html( ' ', 'dan' ) );
+		$categories_list = get_the_category_list( esc_html( ' ' ) );
 		if ( $categories_list && dan_categorized_blog() ) {
-			printf( '<span class="cat-links"><span class="fa fa-folder" aria-hidden="true"></span><span class="screen-reader-text">%1$s</span>%2$s</span>',
+			printf( '<span class="cat-links"><span class="fa fa-folder" aria-hidden="true"></span><span class="screen-reader-text">%1$s</span> %2$s</span>',
 				esc_html__( 'Categories', 'dan' ),
 				$categories_list
 			);
 		}
 
 		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', esc_html_x( ' ', 'list item separator', 'dan' ) );
+		$tags_list = get_the_tag_list( '', esc_html( ' ' ) );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links"><span class="fa fa-tag" aria-hidden="true"></span><span class="screen-reader-text">%1$s</span>%2$s</span>',
+			printf( '<span class="tags-links"><span class="fa fa-tag" aria-hidden="true"></span><span class="screen-reader-text">%1$s</span> %2$s</span>',
 				esc_html__( 'Tags', 'dan' ),
 				$tags_list
 			);

@@ -41,8 +41,10 @@
 						<?php endif; ?>
 					</div><!-- .site-branding-inner -->
 				</div><!-- .site-branding -->
-
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><span class="fa fa-bars" aria-hidden="true"></span><?php esc_html_e( 'Menu', 'dan' ); ?></button>	
+				
+				<?php if ( has_nav_menu( 'primary' ) ) : ?>
+					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><span class="fa fa-bars" aria-hidden="true"></span><?php esc_html_e( 'Menu', 'dan' ); ?></button>
+				<?php endif; ?>
 			</div><!-- .header-inner-small -->
 
 			<?php if ( has_nav_menu( 'primary' ) ) : ?>
@@ -56,25 +58,20 @@
 									'container'      =>  'false',
 								) );
 							?>
-						<?php else: ?>
-							<ul id="primary-menu" class="menu">
-								<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php esc_html_e( 'Home', 'dan' ); ?></a></li>
-							</ul>
 						<?php endif; ?>
 					</div><!-- .main-navigation-inner -->
 				</nav><!-- #site-navigation -->
 			<?php endif; ?>
-
 		</div><!-- .header-inner -->
-		
-		<?php if ( is_front_page() && ( has_header_image() || has_header_video() ) ) : ?>
+
+		<?php if ( has_header_image() || has_header_video() ) : ?>
 		<div class="custom-header">
 			<div class="custom-header-inner">
 				<?php
 				the_custom_header_markup();
 
 				$description = get_bloginfo( 'description', 'display' );
-				if ( $description || is_customize_preview() ) : ?>
+				if ( is_front_page() && $description || is_customize_preview() ) : ?>
 					<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
 				<?php
 				endif; ?>
