@@ -23,15 +23,21 @@
 	// Header text color.
 	wp.customize( 'header_textcolor', function( value ) {
 		value.bind( function( to ) {
-			if ( '' === to ) {
-				$( '.site-title, .site-description' ).css( {
+			if ( 'blank' === to ) {
+				$( '.site-title' ).css( {
 					'clip': 'rect(1px, 1px, 1px, 1px)',
 					'position': 'absolute'
 				} );
+				$( '.site-description' ).css( {
+					'clip': 'rect(1px, 1px, 1px, 1px)',
+				} );
 			} else {
-				$( '.site-title, .site-description' ).css( {
+				$( '.site-title' ).css( {
 					'clip': 'auto',
 					'position': 'relative'
+				} );
+				$( '.site-description' ).css( {
+					'clip': 'auto',
 				} );
 				$( '.site-title a, .site-description' ).css( {
 					'color': to
