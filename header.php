@@ -71,7 +71,7 @@
 				the_custom_header_markup();
 
 				$description = get_bloginfo( 'description', 'display' );
-				if ( is_front_page() && $description || is_customize_preview() ) : ?>
+				if ( is_front_page() && ( $description || is_customize_preview() ) ) : ?>
 					<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
 				<?php
 				endif; ?>
