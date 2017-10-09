@@ -1,9 +1,9 @@
-# Dan v1.0.1
+# Dan v1.0.3
 # Copyright (C) 2017 Yochi
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Dan v1.0.1\n"
+"Project-Id-Version: Dan v1.0.3\n"
 "Report-Msgid-Bugs-To: Yochi <info@yochix2.com>\n"
 "POT-Creation-Date: 2017-09-27 15:39+0900\n"
 "PO-Revision-Date: \n"
