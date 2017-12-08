@@ -34,13 +34,17 @@ get_header(); ?>
 
 				/**
 				 * Filter number of front page sections in Dan.
+				 *
+				 * @since Twenty Seventeen 1.0
+				 *
+				 * @param int $num_sections Number of front page sections.
 				 */
 				$num_sections = apply_filters( 'dan_front_page_sections', 4 );
-				global $dancounter;
+				global $dan_counter;
 
 				// Create a setting and control for each of the sections available in the theme.
 				for ( $i = 1; $i < ( 1 + $num_sections ); $i++ ) {
-					$dancounter = $i;
+					$dan_counter = $i;
 					dan_front_page_section( null, $i );
 				}
 

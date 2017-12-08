@@ -149,9 +149,9 @@ endif;
 function dan_front_page_section( $partial = null, $id = 0 ) {
 	if ( is_a( $partial, 'WP_Customize_Partial' ) ) {
 		// Find out the id and set it up during a selective refresh.
-		global $dancounter;
+		global $dan_counter;
 		$id         = str_replace( 'panel_', '', $partial->id );
-		$dancounter = $id;
+		$dan_counter = $id;
 	}
 
 	global $post; // Modify the global post object before setting up post data.
