@@ -186,6 +186,23 @@ function dan_front_page_template( $template ) {
 add_filter( 'frontpage_template',  'dan_front_page_template' );
 
 /**
+ * Modifies tag cloud widget arguments to display all tags in the same font size
+ * and use list format for better accessibility.
+ *
+ * @param array $args Arguments for tag cloud widget.
+ * @return array The filtered arguments for tag cloud widget.
+ */
+function dan_widget_tag_cloud_args( $args ) {
+	$args['largest']  = 14;
+	$args['smallest'] = 14;
+	$args['unit']     = 'px';
+	$args['format']   = 'list';
+
+	return $args;
+}
+add_filter( 'widget_tag_cloud_args', 'dan_widget_tag_cloud_args' );
+
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
