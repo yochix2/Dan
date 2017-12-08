@@ -292,11 +292,9 @@ input[type="search"].search-field {
 	left: 3px;
 }
 
-.widget .tagcloud a,
-.widget.widget_tag_cloud a,
-.wp_widget_tag_cloud a {
-	margin-right: 0;
-	margin-left: 5px;
+.tagcloud ul li {
+	margin: 0 0 10px 5px;
+	padding: 0;
 }
 
 @media screen and (min-width: 768px) {
