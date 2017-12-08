@@ -3,7 +3,7 @@ Theme Name: Dan
 Author: Yochi
 Author URI: https://yochix2.com/
 Description: Dan is a simple two-columns theme. On the front page, you can use a header image and multiple page sections. Features are, Font Awesome.
-Version: 1.0.3
+Version: 1.0.7
 License: GNU General Public License v2 or later
 License URI: license.txt
 Text Domain: dan
@@ -855,7 +855,7 @@ input[type="checkbox"] {
 label {
 	display: block;
 	margin-bottom: 10px;
-	color: #757575;
+	color: #616161;
 	font-size: 13px;
 }
 
@@ -867,13 +867,13 @@ select {
 # Links
 --------------------------------------------------------------*/
 a {
-	color: #2196f3;
+	color: #1565c0;
 }
 
 a:hover,
 a:focus,
 a:active {
-	color: #0d47a1;
+	color: #4527a0;
 }
 
 a:focus {
@@ -1413,8 +1413,9 @@ a:active {
 	.main-navigation a {
 		font-size: 16px;
 	}
-	
-	.main-navigation ul ul a:hover {
+
+	.main-navigation ul ul a:hover,
+	.main-navigation ul ul a:focus {
 		background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(250, 250, 250, 0.1)), to(rgba(250, 250, 250, 0.1)));
 		background-image: linear-gradient(rgba(250, 250, 250, 0.1), rgba(250, 250, 250, 0.1));
 	}
@@ -1507,13 +1508,17 @@ a:active {
 	padding: 5px 0;
 }
 
-.page-numbers:hover {
+.page-numbers:hover,
+.page-numbers:focus {
 	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(66, 66, 66, 0.1)), to(rgba(66, 66, 66, 0.1)));
 	background-image: linear-gradient(rgba(66, 66, 66, 0.1), rgba(66, 66, 66, 0.1));
+	color: inherit;
 }
 
 .page-numbers.current:hover,
-.page-numbers.dots:hover {
+.page-numbers.current:focus,
+.page-numbers.dots:hover,
+.page-numbers.dots:focus {
 	background-image: none;
 }
 
@@ -1559,7 +1564,9 @@ a:active {
 }
 
 .nav-previous a:hover,
-.nav-next a:hover {
+.nav-previous a:focus,
+.nav-next a:hover,
+.nav-next a:focus {
 	opacity: 0.8;
 }
 
@@ -1574,7 +1581,7 @@ a:active {
 .nav-subtitle {
 	display: block;
 	margin-bottom: 5px;
-	color: #757575;
+	color: #616161;
 	font-size: 12px;
 }
 
@@ -1608,7 +1615,8 @@ a:active {
 	text-decoration: none;
 }
 
-.page-links a:hover {
+.page-links a:hover,
+.page-links a:focus {
 	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(66, 66, 66, 0.1)), to(rgba(66, 66, 66, 0.1)));
 	background-image: linear-gradient(rgba(66, 66, 66, 0.1), rgba(66, 66, 66, 0.1));
 }
@@ -1631,7 +1639,7 @@ a:active {
 .site-info {
 	padding-top: 10px;
 	padding-bottom: 10px;
-	color: #757575;
+	color: #616161;
 	font-size: 14px;
 }
 
@@ -1691,7 +1699,8 @@ a:active {
 	text-decoration: none;
 }
 
-.entry-title a:hover {
+.entry-title a:hover,
+.entry-title a:focus {
 	opacity: 0.8;
 }
 
@@ -1700,16 +1709,17 @@ a:active {
 	display: -ms-flexbox;
 	display: flex;
 	margin-bottom: 5px;
-	color: #757575;
+	color: #616161;
 	font-size: 13px;
 }
 
 .entry-meta a {
-	color: #757575;
+	color: #616161;
 	text-decoration: none;
 }
 
-.entry-meta a:hover {
+.entry-meta a:hover,
+.entry-meta a:focus {
 	opacity: 0.8;
 }
 
@@ -1735,7 +1745,7 @@ a:active {
 	-ms-flex-align: center;
 	align-items: center;
 	margin-top: 10px;
-	color: #757575;
+	color: #616161;
 	font-size: 13px;
 }
 
@@ -1760,11 +1770,12 @@ a:active {
 }
 
 .entry-footer a {
-	color: #757575;
+	color: #616161;
 	text-decoration: none;
 }
 
-.entry-footer a:hover {
+.entry-footer a:hover,
+.entry-footer a:focus {
 	opacity: 0.8;
 }
 
@@ -1773,13 +1784,13 @@ a:active {
 	padding: 5px;
 	border: solid 1px rgba(66, 66, 66, 0.3);
 	border-radius: 3px;
-	color: #757575;
+	color: #616161;
 	font-size: 13px;
 	line-height: 1;
 }
 
 .entry-footer .edit-link a {
-	color: #757575;
+	color: #616161;
 	text-decoration: none;
 }
 
@@ -1813,10 +1824,11 @@ a:active {
 	text-decoration: none;
 }
 
-.more-link:hover {
+.more-link:hover,
+.more-link:focus {
 	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(66, 66, 66, 0.2)), to(rgba(62, 62, 62, 0.2)));
 	background-image: linear-gradient(rgba(66, 66, 66, 0.2), rgba(62, 62, 62, 0.2));
-    color: #fafafa;
+    color: #f5f5f5;
 }
 
 /* Entry thumbnail */
@@ -1927,7 +1939,7 @@ a:active {
 
 .comment-author {
 	margin-bottom: 5px;
-	color: #757575;
+	color: #616161;
 	z-index: 2;
 }
 
@@ -1936,7 +1948,8 @@ a:active {
 	text-decoration: none;
 }
 
-.comment-author a:hover {
+.comment-author a:hover,
+.comment-author a:focus {
 	opacity: 0.8;
 }
 
@@ -1953,12 +1966,12 @@ a:active {
 }
 
 .comment-metadata {
-	color: #757575;
+	color: #616161;
 	font-size: 13px;
 }
 
 .comment-metadata a {
-	color: #757575;
+	color: #616161;
 	text-decoration: none;
 }
 
@@ -1968,8 +1981,14 @@ a:active {
 }
 
 .comment-metadata a.comment-edit-link {
-	color: #424242;
+	display: inline-block;
 	margin-left: 20px;
+    padding: 5px;
+    border: solid 1px rgba(66, 66, 66, 0.3);
+    border-radius: 3px;
+    color: #616161;
+    font-size: 13px;
+    line-height: 1;
 }
 
 .comment-reply-link {
@@ -1978,7 +1997,7 @@ a:active {
 	padding: 5px;
 	border: solid 1px rgba(66, 66, 66, 0.3);
 	border-radius: 3px;
-	color: #757575;
+	color: #616161;
 	font-size: 13px;
 	text-decoration: none;
 	line-height: 1;
@@ -1988,7 +2007,7 @@ a:active {
 .comment-awaiting-moderation,
 .logged-in-as,
 .form-allowed-tags {
-	color: #757575;
+	color: #616161;
 	font-size: 13px;
 	margin-bottom: 30px;
 }
@@ -2098,7 +2117,8 @@ a:active {
 	text-decoration: none;
 }
 
-.widget li a:hover {
+.widget li a:hover,
+.widget li a:focus {
 	opacity: 0.8;
 }
 
@@ -2107,12 +2127,12 @@ a:active {
 .widget .post-date,
 .widget .rss-date {
 	display: block;
-	color: #757575;
+	color: #616161;
 	font-size: 13px;
 }
 
 .widget_archive li {
-	color: #757575;
+	color: #616161;
 }
 
 .widget_archive li a {
@@ -2172,7 +2192,7 @@ a:active {
 .widget_rss .rss-date,
 .widget_rss li cite {
 	display: block;
-	color: #757575;
+	color: #616161;
 	font-size: 12px;
 	font-style: normal;
 	line-height: 1.5;
@@ -2214,18 +2234,27 @@ input[type="search"].search-field {
 }
 
 /* Tag cloud widget */
+.tagcloud ul {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+
+.tagcloud ul li {
+	margin: 0 5px 10px 0;
+	padding: 0;
+}
 
 .widget .tagcloud a,
 .widget.widget_tag_cloud a,
 .wp_widget_tag_cloud a {
-	display: inline-block;
-	margin-right: 5px;
-	margin-bottom: 10px;
+	display: block;
 	padding: 5px;
 	border: solid 1px rgba(66, 66, 66, 0.3);
 	border-radius: 3px;
 	color: inherit;
-	font-size: 14px !important; /* !important to overwrite inline styles */
 	text-decoration: none;
 	word-wrap: break-word;
 }
@@ -2354,7 +2383,7 @@ object {
 
 .wp-caption .wp-caption-text {
 	padding-top: 5px;
-	color: #757575;
+	color: #616161;
 	font-size: 13px;
 }
 
@@ -2367,6 +2396,13 @@ object {
 --------------------------------------------------------------*/
 .gallery {
 	margin-bottom: 20px;
+}
+
+.gallery-caption {
+	display: block;
+	padding-top: 5px;
+	color: #616161;
+	font-size: 13px;
 }
 
 .gallery-item {
@@ -2414,12 +2450,13 @@ object {
 	.gallery-columns-9 .gallery-item {
 		max-width: 11.11%;
 	}
-}
-.gallery-caption {
-	display: block;
-	padding-top: 5px;
-	color: #757575;
-	font-size: 13px;
+
+	.gallery-columns-6 .gallery-caption,
+	.gallery-columns-7 .gallery-caption,
+	.gallery-columns-8 .gallery-caption,
+	.gallery-columns-9 .gallery-caption {
+		display: none;
+	}
 }
 
 /*--------------------------------------------------------------
