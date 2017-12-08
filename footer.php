@@ -40,7 +40,7 @@
 					<span class="sep"> | </span>
 					<?php
 					/* translators: 1: Theme name, 2: Theme author. */
-					printf( esc_html__( 'Theme: %1$s by %2$s.', 'dan' ), 'dan', '<a href="https://profiles.wordpress.org/yochix2">Yochi</a>' );
+					printf( esc_html__( 'Theme: %1$s by %2$s.', 'dan' ), 'dan', '<a href="' . esc_url( __( 'https://profiles.wordpress.org/yochix2', 'dan' ) ) . '">' . esc_html__( 'Yochi', 'dan' ) . '</a>' );
 					?>
 				</div><!-- .site-info-inner -->
 			</div><!-- .site-info -->
