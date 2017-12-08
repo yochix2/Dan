@@ -1,11 +1,11 @@
-# Dan v1.0.3
+# Dan v1.0.7
 # Copyright (C) 2017 Yochi
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Dan v1.0.3\n"
+"Project-Id-Version: Dan v1.0.7\n"
 "Report-Msgid-Bugs-To: Yochi <info@yochix2.com>\n"
-"POT-Creation-Date: 2017-09-27 15:39+0900\n"
+"POT-Creation-Date: 2017-11-23 15:38+0900\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Yochi <info@yochix2.com>\n"
 "Language-Team: Yochi\n"
@@ -20,7 +20,7 @@ msgstr ""
 "esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;"
 "_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
 "X-Poedit-Basepath: ..\n"
-"X-Generator: Poedit 2.0.4\n"
+"X-Generator: Poedit 2.0.5\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: 404.php:17
@@ -73,6 +73,14 @@ msgstr ""
 msgid "Theme: %1$s by %2$s."
 msgstr ""
 
+#: footer.php:43
+msgid "https://profiles.wordpress.org/yochix2"
+msgstr ""
+
+#: footer.php:43
+msgid "Yochi"
+msgstr ""
+
 #: functions.php:49
 msgid "Primary Menu"
 msgstr ""
@@ -85,6 +93,7 @@ msgstr ""
 msgid ""
 "Add widgets here to appear in your sidebar on blog posts and archive pages."
 msgstr ""
+""
 ""
 
 #: functions.php:128
@@ -167,8 +176,8 @@ msgstr ""
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
 
-#: inc/template-tags.php:136 template-parts/content-front-page-panels.php:30
-#: template-parts/content-front-page.php:25 template-parts/content.php:40
+#: inc/template-tags.php:136 template-parts/content-front-page-panels.php:31
+#: template-parts/content-front-page.php:26 template-parts/content.php:40
 #, php-format
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
@@ -205,6 +214,7 @@ msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 ""
+""
 
 #: template-parts/content-none.php:42
 msgid ""
@@ -234,15 +244,15 @@ msgstr ""
 #~ "<span class=\"fa fa-clock-o\" aria-hidden=\"true\"></span><span class="
 #~ "\"screen-reader-text\">Posted on</span> %s"
 #~ msgstr ""
-#~ "<span class=\"fa fa-clock-o\" aria-hidden=\"true\"></span><span class="
-#~ "\"screen-reader-text\">投稿日</span> %s"
+#~ ""
+#~ ""
 
 #~ msgid ""
 #~ "<span class=\"fa fa-user-circle\" aria-hidden=\"true\"></span><span class="
 #~ "\"screen-reader-text\">by</span> %s"
 #~ msgstr ""
-#~ "<span class=\"fa fa-user-circle\" aria-hidden=\"true\"></span><span class="
-#~ "\"screen-reader-text\">投稿者</span> %s"
+#~ ""
+#~ ""
 
 #~ msgid "by %s"
-#~ msgstr "投稿者 %s"
+#~ msgstr ""
