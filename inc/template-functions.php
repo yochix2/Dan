@@ -28,7 +28,7 @@ function dan_body_classes( $classes ) {
 	}
 
 	// Add class on front page.
-	if ( is_front_page() ) {
+	if ( is_front_page() && 'posts' !== get_option( 'show_on_front' ) ) {
 		$classes[] = 'dan-front-page';
 	}
 
