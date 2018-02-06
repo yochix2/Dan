@@ -2,7 +2,7 @@
 
 Author: Yochi
 Tags: two-columns, right-sidebar, accessibility-ready, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog
-Tested up to: 4.9.1
+Tested up to: 4.9.2
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
@@ -37,10 +37,19 @@ Code License: MIT License
 Source      : http://fontawesome.io/
 
 object-fit-images
-License: MIT License
+License     : MIT License
 Source      : https://github.com/bfred-it/object-fit-images
 
 == Changelog ==
+
+= 1.0.8 =
+* Fixed an issue in which video of custom header protruded in Chrome
+* Fixed the html tag in the template
+* Fixed content-none.php
+* Fixed style.css
+* Fixed screenshot.png
+* Changed layout to CSS grid
+* Added ofi-script.js
 
 = 1.0.0 =
 * Initial release
