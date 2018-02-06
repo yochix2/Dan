@@ -24,22 +24,19 @@
 
 	<header id="masthead" class="site-header" role="banner">
 		<div class="header-inner">
-			
 			<div class="header-inner-small">
 				<div class="site-branding">
-					<div class="site-branding-inner">
-						<?php if ( has_custom_logo() ) : ?>
-							<div class="site-branding-logo">
-								<?php the_custom_logo(); ?>
-							</div><!-- .site-branding-logo -->
-						<?php endif; ?>
+					<?php if ( has_custom_logo() ) : ?>
+						<div class="site-branding-logo">
+							<?php the_custom_logo(); ?>
+						</div><!-- .site-branding-logo -->
+					<?php endif; ?>
 
-						<?php if ( is_front_page() ) : ?>
-							<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-						<?php else : ?>
-							<div class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></div>
-						<?php endif; ?>
-					</div><!-- .site-branding-inner -->
+					<?php if ( is_front_page() ) : ?>
+						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<?php else : ?>
+						<div class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></div>
+					<?php endif; ?>
 				</div><!-- .site-branding -->
 				
 				<?php if ( has_nav_menu( 'primary' ) ) : ?>
@@ -65,19 +62,13 @@
 		</div><!-- .header-inner -->
 
 		<?php if ( has_header_image() || has_header_video() ) : ?>
-		<div class="custom-header">
-			<div class="custom-header-inner">
-				<?php
-				the_custom_header_markup();
+			<?php
+			$description = get_bloginfo( 'description', 'display' );
+			if ( is_front_page() && ( $description || is_customize_preview() ) ) : ?>
+				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+			<?php endif; ?>
 
-				$description = get_bloginfo( 'description', 'display' );
-				if ( is_front_page() && ( $description || is_customize_preview() ) ) : ?>
-					<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-				<?php
-				endif; ?>
-			</div><!-- .custom-header-inner -->
-		</div><!-- .custom-header -->
-	<?php endif; ?>
+			<?php the_custom_header_markup(); ?>
+
+		<?php endif; ?>
 	</header><!-- #masthead -->
-
-	<div id="content" class="site-content">
