@@ -1,5 +1,5 @@
 /**
- * global ScreenReaderText
+ * global danScreenReaderText
  *
  */
 ( function( $ ) {
@@ -13,13 +13,13 @@
 			'aria-expanded': false
 		} ).append( $( '<span />', {
 			'class': 'screen-reader-text',
-			text: screenReaderText.expand
+			text: danScreenReaderText.expand
 		} ) );
 
 		container.find( '.menu-item-has-children > a, .page_item_has_children > a' ).after( dropdownToggle );
 
 		// Toggle buttons and submenu items with active children menu items.
-		container.find( '.current-menu-ancestor > button' ).addClass( 'toggled-on' ).attr( 'aria-expanded', 'true' ).find( '.screen-reader-text' ).text( screenReaderText.collapse );
+		container.find( '.current-menu-ancestor > button' ).addClass( 'toggled-on' ).attr( 'aria-expanded', 'true' ).find( '.screen-reader-text' ).text( danScreenReaderText.collapse );
 		container.find( '.current-menu-ancestor > .sub-menu' ).addClass( 'toggled-on' );
 
 		container.find( '.dropdown-toggle' ).click( function( e ) {
@@ -33,7 +33,7 @@
 			// jscs:disable
 			_this.attr( 'aria-expanded', _this.attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
 			// jscs:enable
-			screenReaderSpan.text( screenReaderSpan.text() === screenReaderText.expand ? screenReaderText.collapse : screenReaderText.expand );
+			screenReaderSpan.text( screenReaderSpan.text() === danScreenReaderText.expand ? danScreenReaderText.collapse : danScreenReaderText.expand );
 		} );
 	}
 	initMainNavigation( $( '.main-navigation' ) );
