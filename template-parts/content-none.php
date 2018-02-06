@@ -11,11 +11,7 @@
 
 <section class="no-results not-found">
 	<header class="page-header">
-		<?php if ( is_front_page() && ! is_home() ) : ?>
-			<h2 class="page-title"><?php esc_html_e( 'Nothing Found', 'dan' ); ?></h2>
-		<?php elseif; ?>
-			<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'dan' ); ?></h1>
-		<?php endif; ?>
+		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'dan' ); ?></h1>
 	</header><!-- .page-header -->
 
 	<div class="page-content">
