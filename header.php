@@ -40,7 +40,7 @@
 				</div><!-- .site-branding -->
 				
 				<?php if ( has_nav_menu( 'primary' ) ) : ?>
-					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><span class="fa fa-bars" aria-hidden="true"></span><?php esc_html_e( 'Menu', 'dan' ); ?></button>
+					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><span class="fas fa-bars" aria-hidden="true"></span><?php esc_html_e( 'Menu', 'dan' ); ?></button>
 				<?php endif; ?>
 			</div><!-- .header-inner-small -->
 

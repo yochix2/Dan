@@ -18,8 +18,8 @@ get_header(); ?>
 		get_template_part( 'template-parts/content', get_post_format() );
 
 		the_post_navigation( array(
-			'prev_text' => '<span class="nav-subtitle"><span class="fa fa-angle-double-left" aria-hidden="true"></span>' . __( 'Previous Post', 'dan' ) . '</span> <span class="nav-title">' . '%title</span>',
-			'next_text' => '<span class="nav-subtitle">' . __( 'Next Post', 'dan' ) . '<span class="fa fa-angle-double-right" aria-hidden="true"></span></span><span class="nav-title">%title' . '</span>',
+			'prev_text' => '<span class="nav-subtitle"><span class="fas fa-angle-double-left" aria-hidden="true"></span>' . __( 'Previous Post', 'dan' ) . '</span> <span class="nav-title">' . '%title</span>',
+			'next_text' => '<span class="nav-subtitle">' . __( 'Next Post', 'dan' ) . '<span class="fas fa-angle-double-right" aria-hidden="true"></span></span><span class="nav-title">%title' . '</span>',
 		) );
 
 		// If comments are open or we have at least one comment, load up the comment template.

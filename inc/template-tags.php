@@ -36,7 +36,7 @@ function dan_posted_on() {
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
-	echo '<span class="posted-on"><span class="fa fa-clock-o" aria-hidden="true"></span>' . $posted_on . '</span><span class="byline"><span class="fa fa-user-circle" aria-hidden="true"></span>' . $byline . '</span>'; // WPCS: XSS OK.
+	echo '<span class="posted-on"><span class="fas fa-clock fa-fw" aria-hidden="true"></span>' . $posted_on . '</span><span class="byline"><span class="fas fa-user-circle fa-fw" aria-hidden="true"></span>' . $byline . '</span>'; // WPCS: XSS OK.
 
 }
 endif;
@@ -60,7 +60,7 @@ function dan_entry_footer() {
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( esc_html( ' ' ) );
 		if ( $categories_list && dan_categorized_blog() ) {
-			printf( '<span class="cat-links"><span class="fa fa-folder" aria-hidden="true"></span><span class="screen-reader-text">%1$s</span> %2$s</span>',
+			printf( '<span class="cat-links"><span class="fas fa-folder fa-fw" aria-hidden="true"></span><span class="screen-reader-text">%1$s</span> %2$s</span>',
 				esc_html__( 'Categories', 'dan' ),
 				$categories_list
 			);
@@ -69,7 +69,7 @@ function dan_entry_footer() {
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', esc_html( ' ' ) );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links"><span class="fa fa-tag" aria-hidden="true"></span><span class="screen-reader-text">%1$s</span> %2$s</span>',
+			printf( '<span class="tags-links"><span class="fas fa-tag fa-fw" aria-hidden="true"></span><span class="screen-reader-text">%1$s</span> %2$s</span>',
 				esc_html__( 'Tags', 'dan' ),
 				$tags_list
 			);
@@ -77,7 +77,7 @@ function dan_entry_footer() {
 	}
 
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		echo '<span class="comments-link"><span class="fa fa-comment" aria-hidden="true"></span>';
+		echo '<span class="comments-link"><span class="fas fa-comment fa-fw" aria-hidden="true"></span>';
 		comments_popup_link(
 			sprintf(
 				wp_kses(

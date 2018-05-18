@@ -43,8 +43,8 @@ get_header(); ?>
 
 		/* Previous/next page navigation. */
 		the_posts_pagination( array(
-			'prev_text'          => '<span class="fa fa-angle-double-left" aria-hidden="true"></span> ' . __( 'Previous page', 'dan' ),
-			'next_text'          => __( 'Next page', 'dan' ) . ' <span class="fa fa-angle-double-right" aria-hidden="true"></span>',
+			'prev_text'          => '<span class="fas fa-angle-double-left" aria-hidden="true"></span> ' . __( 'Previous page', 'dan' ),
+			'next_text'          => __( 'Next page', 'dan' ) . ' <span class="fas fa-angle-double-right" aria-hidden="true"></span>',
 			'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'dan' ) . '</span>',
 		) );
 

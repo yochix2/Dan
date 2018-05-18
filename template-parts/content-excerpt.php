@@ -11,7 +11,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'entry-card' ); ?>>
 	<?php if ( is_sticky() && is_home() && ! is_paged() ) : ?>
-		<span class="sticky-post"><span class="fa fa-thumb-tack" aria-hidden="true"></span><?php esc_html_e( 'Featured', 'dan' ); ?></span>
+		<span class="sticky-post"><span class="fas fa-thumbtack" aria-hidden="true"></span><?php esc_html_e( 'Featured', 'dan' ); ?></span>
 	<?php endif; ?>
 	<header class="entry-header">
 		<?php if ( is_front_page() && ! is_home() ) {
