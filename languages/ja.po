@@ -1,11 +1,11 @@
-# Dan v1.0.8
+# Dan v1.0.9
 # Copyright (C) 2017 Yochi
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Dan v1.0.8\n"
+"Project-Id-Version: Dan v1.1.0\n"
 "Report-Msgid-Bugs-To: Yochi <info@yochix2.com>\n"
-"POT-Creation-Date: 2017-11-23 15:38+0900\n"
+"POT-Creation-Date: 2018-05-18 18:35+0900\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Yochi <info@yochix2.com>\n"
 "Language-Team: Yochi\n"
@@ -20,26 +20,26 @@ msgstr ""
 "esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;"
 "_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
 "X-Poedit-Basepath: ..\n"
-"X-Generator: Poedit 2.0.5\n"
+"X-Generator: Poedit 2.0.7\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: 404.php:17
+#: 404.php:16
 msgid "Oops! That page can&rsquo;t be found."
 msgstr "お探しのページが見つかりません。"
 
-#: 404.php:21
+#: 404.php:20
 msgid "It looks like nothing was found at this location. Maybe try a search?"
 msgstr "こちらには何もありません。検索をお試しください。"
 
-#: archive.php:42 index.php:47 search.php:42
+#: archive.php:41 index.php:46 search.php:41
 msgid "Previous page"
 msgstr "前のページへ"
 
-#: archive.php:43 index.php:48 search.php:43
+#: archive.php:42 index.php:47 search.php:42
 msgid "Next page"
 msgstr "次のページへ"
 
-#: archive.php:44 index.php:49 search.php:44
+#: archive.php:43 index.php:48 search.php:43
 msgid "Page"
 msgstr "ページ"
 
@@ -59,60 +59,47 @@ msgstr[0] "「%2$s」への%1$s件のコメント"
 msgid "Comments are closed."
 msgstr "コメントは受け付けていません。"
 
-#: footer.php:36
+#: footer.php:35
 msgid "https://wordpress.org/"
-msgstr ""
+msgstr "https://wordpress.org/"
 
-#: footer.php:38
+#: footer.php:37
 #, php-format
 msgid "Proudly powered by %s"
 msgstr "Proudly powered by %s"
-
-#: footer.php:43
-#, php-format
-msgid "Theme: %1$s by %2$s."
-msgstr "Theme: %1$s by %2$s."
-
-#: footer.php:43
-msgid "https://profiles.wordpress.org/yochix2"
-msgstr ""
-
-#: footer.php:43
-msgid "Yochi"
-msgstr "Yochi"
 
 #: functions.php:49
 msgid "Primary Menu"
 msgstr "プライマリーメニュー"
 
-#: functions.php:118
+#: functions.php:119
 msgid "Sidebar"
 msgstr "サイドバー"
 
-#: functions.php:120
+#: functions.php:121
 msgid ""
 "Add widgets here to appear in your sidebar on blog posts and archive pages."
 msgstr ""
 "ブログ投稿とアーカイブページのサイドバーに表示するウィジェットをここに追加し"
 "てください。"
 
-#: functions.php:128
+#: functions.php:129
 msgid "Footer 1"
 msgstr "フッター 1"
 
-#: functions.php:130 functions.php:140
+#: functions.php:131 functions.php:141
 msgid "Add widgets here to appear in your footer."
 msgstr "フッターに表示するウィジェットをここに追加します。"
 
-#: functions.php:138
+#: functions.php:139
 msgid "Footer 2"
 msgstr "フッター 2"
 
-#: functions.php:172
+#: functions.php:175
 msgid "expand child menu"
 msgstr "サブメニューを展開"
 
-#: functions.php:173
+#: functions.php:176
 msgid "collapse child menu"
 msgstr "サブメニューを閉じる"
 
@@ -120,7 +107,7 @@ msgstr "サブメニューを閉じる"
 msgid "Skip to content"
 msgstr "コンテンツへスキップ"
 
-#: header.php:46
+#: header.php:43
 msgid "Menu"
 msgstr "Menu"
 
@@ -187,16 +174,31 @@ msgstr "<span class=\"screen-reader-text\">\"%s\"の</span>続きを読む"
 msgid "Front Page Section %1$s Placeholder"
 msgstr "フロントページセクション %1$s プレースホルダ"
 
-#: search.php:22
+#: search.php:21
 #, php-format
 msgid "Search Results for: %s"
 msgstr "検索結果: %s"
 
-#: single.php:22
+#: searchform.php:11
+msgctxt "label"
+msgid "Search for:"
+msgstr "検索対象:"
+
+#: searchform.php:12
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr "検索 &hellip;"
+
+#: searchform.php:14
+msgctxt "submit button"
+msgid "Search"
+msgstr "検索"
+
+#: single.php:21
 msgid "Previous Post"
 msgstr "前の記事へ"
 
-#: single.php:23
+#: single.php:22
 msgid "Next Post"
 msgstr "次の記事へ"
 
@@ -204,11 +206,11 @@ msgstr "次の記事へ"
 msgid "Featured"
 msgstr "注目"
 
-#: template-parts/content-none.php:15 template-parts/content-none.php:17
+#: template-parts/content-none.php:14
 msgid "Nothing Found"
 msgstr "何も見つかりませんでした"
 
-#: template-parts/content-none.php:29
+#: template-parts/content-none.php:25
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
@@ -216,7 +218,7 @@ msgstr ""
 "最初の投稿を公開する準備ができましたか ? <a href=\"%1$s\">こちらからスタート"
 "しましょう</a>。"
 
-#: template-parts/content-none.php:42
+#: template-parts/content-none.php:38
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
@@ -224,7 +226,7 @@ msgstr ""
 "検索キーワードに一致するコンテンツが見つかりませんでした。他のキーワードをお"
 "試しください。"
 
-#: template-parts/content-none.php:48
+#: template-parts/content-none.php:44
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
@@ -233,6 +235,15 @@ msgstr "お探しのコンテンツが見つかりません。検索をお試し
 #: template-parts/content-page.php:28 template-parts/content.php:51
 msgid "Pages:"
 msgstr "ページ:"
+
+#~ msgid "Theme: %1$s by %2$s."
+#~ msgstr "Theme: %1$s by %2$s."
+
+#~ msgid "https://profiles.wordpress.org/yochix2"
+#~ msgstr "https://profiles.wordpress.org/yochix2"
+
+#~ msgid "Yochi"
+#~ msgstr "Yochi"
 
 #~ msgid "Add widgets here."
 #~ msgstr "ここにウィジェットを追加。"

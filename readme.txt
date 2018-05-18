@@ -2,7 +2,7 @@
 
 Author: Yochi
 Tags: two-columns, right-sidebar, accessibility-ready, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog
-Tested up to: 4.9.2
+Tested up to: 4.9.6
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
@@ -34,13 +34,24 @@ Dan includes support for Infinite Scroll in Jetpack.
 Font Awesome
 Font License: SIL OFL 1.1
 Code License: MIT License
-Source      : http://fontawesome.io/
+Source      : https://fontawesome.com/
 
 object-fit-images
 License     : MIT License
 Source      : https://github.com/bfred-it/object-fit-images
 
 == Changelog ==
+
+= 1.1.0 =
+* Added link to privacy policy page in footer
+* Changed Font Awesome Free to ver 5.0.13
+
+= 1.0.9 =
+* Fixed style.css
+* Changed normalize.css to ver 8.0.0
+* Changed Font Awesome to ver 5.0.10
+* Added full width page templates
+* Added searchform.php
 
 = 1.0.8 =
 * Fixed an issue in which video of custom header protruded in Chrome
