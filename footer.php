@@ -27,15 +27,15 @@
 		<?php endif; ?>
 
 		<div class="site-info">
+			<?php
+			if ( function_exists( 'the_privacy_policy_link' ) ) {
+				the_privacy_policy_link( '', '<span role="separator" aria-hidden="true"></span>' );
+			}
+			?>
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'dan' ) ); ?>"><?php
 			/* translators: %s: CMS name, i.e. WordPress. */
 			printf( esc_html__( 'Proudly powered by %s', 'dan' ), 'WordPress' );
 			?></a>
-			<span class="sep"> | </span>
-			<?php
-			/* translators: 1: Theme name, 2: Theme author. */
-			printf( esc_html__( 'Theme: %1$s by %2$s.', 'dan' ), 'dan', '<a href="' . esc_url( __( 'https://profiles.wordpress.org/yochix2', 'dan' ) ) . '">' . esc_html__( 'Yochi', 'dan' ) . '</a>' );
-			?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
