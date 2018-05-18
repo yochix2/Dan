@@ -92,6 +92,7 @@ function dan_setup() {
 
 	// Enable support editor-style on WordPress dashboard.
 	add_editor_style( 'assets/css/editor-style.css' );
+	add_editor_style( 'assets/font-awesome/web-fonts-with-css/css/fontawesome-all.min.css' );
 }
 endif;
 add_action( 'after_setup_theme', 'dan_setup' );
@@ -154,7 +155,7 @@ function dan_scripts() {
 	$version = $my_theme->get( 'Version' );
 
 	// Add Font Awesome, used in the main stylesheet.
-	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/font-awesome/css/font-awesome.min.css', array(), '4.7.0' );
+	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/font-awesome/web-fonts-with-css/css/fontawesome-all.min.css', array(), '5.0.13' );
 
 	wp_enqueue_style( 'dan-style', get_stylesheet_uri() );
 
