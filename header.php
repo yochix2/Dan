@@ -23,43 +23,37 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'dan' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
-		<div class="header-inner">
-			<div class="header-inner-small">
-				<div class="site-branding">
-					<?php if ( has_custom_logo() ) : ?>
-						<div class="site-branding-logo">
-							<?php the_custom_logo(); ?>
-						</div><!-- .site-branding-logo -->
-					<?php endif; ?>
-
-					<?php if ( is_front_page() ) : ?>
-						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-					<?php else : ?>
-						<div class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></div>
-					<?php endif; ?>
-				</div><!-- .site-branding -->
-				
-				<?php if ( has_nav_menu( 'primary' ) ) : ?>
-					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><span class="fas fa-bars" aria-hidden="true"></span><?php esc_html_e( 'Menu', 'dan' ); ?></button>
-				<?php endif; ?>
-			</div><!-- .header-inner-small -->
-
-			<?php if ( has_nav_menu( 'primary' ) ) : ?>
-				<nav id="site-navigation" class="main-navigation" role="navigation">
-					<div class="main-navigation-inner">
-						<?php if ( has_nav_menu( 'primary' ) ) : ?>
-							<?php
-								wp_nav_menu( array(
-									'theme_location' => 'primary',
-									'menu_id'        => 'primary-menu',
-									'container'      =>  'false',
-								) );
-							?>
-						<?php endif; ?>
-					</div><!-- .main-navigation-inner -->
-				</nav><!-- #site-navigation -->
+		<div class="site-branding">
+			<?php if ( has_custom_logo() ) : ?>
+				<div class="site-branding-logo">
+					<?php the_custom_logo(); ?>
+				</div><!-- .site-branding-logo -->
 			<?php endif; ?>
-		</div><!-- .header-inner -->
+
+			<?php if ( is_front_page() ) : ?>
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<?php else : ?>
+				<div class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></div>
+			<?php endif; ?>
+		</div><!-- .site-branding -->
+
+		<?php if ( has_nav_menu( 'primary' ) ) : ?>
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><span class="fas fa-bars" aria-hidden="true"></span><?php esc_html_e( 'Menu', 'dan' ); ?></button>
+		<?php endif; ?>
+
+		<?php if ( has_nav_menu( 'primary' ) ) : ?>
+			<nav id="site-navigation" class="main-navigation" role="navigation">
+				<?php if ( has_nav_menu( 'primary' ) ) : ?>
+					<?php
+						wp_nav_menu( array(
+							'theme_location' => 'primary',
+							'menu_id'        => 'primary-menu',
+							'container'      =>  'false',
+						) );
+					?>
+				<?php endif; ?>
+			</nav><!-- #site-navigation -->
+		<?php endif; ?>
 
 		<?php if ( has_header_image() || has_header_video() ) : ?>
 			<?php
