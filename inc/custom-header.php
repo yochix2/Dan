@@ -22,6 +22,7 @@ function dan_custom_header_setup() {
 		'width'                  => 1920,
 		'height'                 => 1080,
 		'flex-height'            => true,
+		'header-text'            => false,
 		'video'                  => true,
 		'wp-head-callback'       => 'dan_header_style',
 	) ) );
@@ -69,4 +70,19 @@ function dan_header_style() {
 	</style>
 	<?php
 }
+endif;
+
+if ( ! function_exists( 'dan_video_controls' ) ) :
+/**
+ * Customize video play/pause button in the custom header.
+ *
+ * @param array $settings Video settings.
+ * @return array The filtered video settings.
+ */
+function dan_video_controls( $settings ) {
+	$settings['l10n']['play'] = '<span class="fas fa-play"></span><span class="screen-reader-text">' . __( 'Play background video', 'dan' ) . '</span>';
+	$settings['l10n']['pause'] = '<span class="fas fa-pause"></span><span class="screen-reader-text">' . __( 'Pause background video', 'dan' ) . '</span>';
+	return $settings;
+}
+add_filter( 'header_video_settings', 'dan_video_controls' );
 endif;
