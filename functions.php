@@ -47,6 +47,7 @@ function dan_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary Menu', 'dan' ),
+		'social'  => esc_html__( 'Social Links Menu', 'dan' ),
 	) );
 
 	/*
@@ -80,12 +81,6 @@ function dan_setup() {
 		'width'       => 240,
 		'flex-height' => true,
 	) );
-
-	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'dan_custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
-	) ) );
 
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
@@ -148,6 +143,23 @@ function dan_widgets_init() {
 add_action( 'widgets_init', 'dan_widgets_init' );
 
 /**
+ * Display custom color CSS.
+ */
+function dan_colors_css_wrap() {
+	if ( 'custom' !== get_theme_mod( 'colorscheme' ) && ! is_customize_preview() ) {
+		return;
+	}
+
+	require_once( get_parent_theme_file_path( '/inc/color-patterns.php' ) );
+	$hue = absint( get_theme_mod( 'colorscheme_hue', 250 ) );
+?>
+	<style type="text/css" id="custom-theme-colors" <?php if ( is_customize_preview() ) { echo 'data-hue="' . $hue . '"'; } ?>>
+		<?php echo dan_custom_colors_css(); ?>
+	</style>
+<?php }
+add_action( 'wp_head', 'dan_colors_css_wrap' );
+
+/**
  * Enqueue scripts and styles.
  */
 function dan_scripts() {
@@ -155,15 +167,16 @@ function dan_scripts() {
 	$version = $my_theme->get( 'Version' );
 
 	// Add Font Awesome, used in the main stylesheet.
-	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/font-awesome/web-fonts-with-css/css/fontawesome-all.min.css', array(), '5.0.13' );
+	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/font-awesome/css/all.css', array(), '5.1.0' );
 
 	wp_enqueue_style( 'dan-style', get_stylesheet_uri() );
 
+	// Load the blue gray colorscheme.
+	if ( 'blue-gray' === get_theme_mod( 'colorscheme', 'gray' ) ) {
+		wp_enqueue_style( 'dan-colors-blue-gray', get_theme_file_uri( '/assets/css/colors-blue-gray.css' ), array( 'dan-style' ), '1.0' );
+	}
+
 	wp_enqueue_script( 'dan-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array( 'jquery' ), $version, true );
-
-	wp_enqueue_script( 'object-fit-images', get_template_directory_uri() . '/assets/ofi/ofi.min.js', array( 'jquery' ), $version, true );
-
-	wp_enqueue_script( 'object-fit-script', get_template_directory_uri() . '/assets/js/ofi-script.js', array( 'jquery' ), $version, true );
 
 	wp_enqueue_script( 'dan-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array( 'jquery' ), '20151215', true );
 
