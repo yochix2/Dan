@@ -9,7 +9,6 @@ https://codex.wordpress.org/Right-to-Left_Language_Support
 
 */
 
-
 body {
 	direction: rtl;
 	unicode-bidi: embed;
@@ -55,8 +54,17 @@ input[type="checkbox"] {
 .has-header-video .wp-custom-header iframe,
 .has-header-video .wp-custom-header video,
 .has-header-video .wp-custom-header iframe {
-	right: 0;
+	right: 50%;
 	left: auto;
+}
+
+@supports ( object-fit: cover ) {
+    .has-header-image .wp-custom-header img,
+	.has-header-video .wp-custom-header video,
+	.has-header-video .wp-custom-header iframe {
+        right: 0;
+		left: auto;
+    }
 }
 
 .wp-custom-header .wp-custom-header-video-button {
@@ -72,7 +80,7 @@ input[type="checkbox"] {
 
 .main-navigation .menu-item-has-children > a {
 	margin-right: 0;
-	margin-left: 46px;
+	margin-left: 42px;
 }
 
 .dropdown-toggle {
@@ -88,6 +96,11 @@ input[type="checkbox"] {
 }
 
 @media screen and (max-width: 767px) {
+	.main-navigation {
+		right: 0;
+		left: auto;
+	}
+
 	.main-navigation ul ul {
 		margin-right: 15px;
 		margin-left: 0;
@@ -131,6 +144,11 @@ input[type="checkbox"] {
 		right: 100%;
 		left: auto;
 	}
+}
+
+.social-navigation li + li {
+	margin-right: 10px;
+	margin-left: 0;
 }
 
 /* Pagination */
@@ -208,6 +226,13 @@ input[type="checkbox"] {
 	margin-left: 0;
 }
 
+.entry-content h3 {
+	padding-right: 10px;
+	padding-left: 0;
+	border-right: 5px solid #e0e0e0;
+    border-left: 0;
+}
+
 /* Comments */
 
 .comment-list .children > li {
@@ -273,8 +298,8 @@ input[type="checkbox"] {
 }
 
 .search-form .search-submit {
-	margin-right: 5px;
-	margin-left: 0;
+	right: auto;
+	left: 0;
 }
 
 .tagcloud ul li {

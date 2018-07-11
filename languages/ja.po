@@ -1,11 +1,11 @@
-# Dan v1.0.9
+# Dan v1.1.1
 # Copyright (C) 2017 Yochi
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Dan v1.1.0\n"
+"Project-Id-Version: Dan v1.1.1\n"
 "Report-Msgid-Bugs-To: Yochi <info@yochix2.com>\n"
-"POT-Creation-Date: 2018-05-18 18:35+0900\n"
+"POT-Creation-Date: 2018-06-30 21:15+0900\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Yochi <info@yochix2.com>\n"
 "Language-Team: Yochi\n"
@@ -20,7 +20,7 @@ msgstr ""
 "esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;"
 "_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
 "X-Poedit-Basepath: ..\n"
-"X-Generator: Poedit 2.0.7\n"
+"X-Generator: Poedit 2.0.8\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: 404.php:16
@@ -59,11 +59,15 @@ msgstr[0] "「%2$s」への%1$s件のコメント"
 msgid "Comments are closed."
 msgstr "コメントは受け付けていません。"
 
-#: footer.php:35
+#: footer.php:29
+msgid "Footer Social Links Menu"
+msgstr "フッターソーシャルリンクメニュー"
+
+#: footer.php:47
 msgid "https://wordpress.org/"
 msgstr "https://wordpress.org/"
 
-#: footer.php:37
+#: footer.php:49
 #, php-format
 msgid "Proudly powered by %s"
 msgstr "Proudly powered by %s"
@@ -72,34 +76,38 @@ msgstr "Proudly powered by %s"
 msgid "Primary Menu"
 msgstr "プライマリーメニュー"
 
-#: functions.php:119
+#: functions.php:50
+msgid "Social Links Menu"
+msgstr "ソーシャルリンクメニュー"
+
+#: functions.php:114
 msgid "Sidebar"
 msgstr "サイドバー"
 
-#: functions.php:121
+#: functions.php:116
 msgid ""
 "Add widgets here to appear in your sidebar on blog posts and archive pages."
 msgstr ""
 "ブログ投稿とアーカイブページのサイドバーに表示するウィジェットをここに追加し"
 "てください。"
 
-#: functions.php:129
+#: functions.php:124
 msgid "Footer 1"
 msgstr "フッター 1"
 
-#: functions.php:131 functions.php:141
+#: functions.php:126 functions.php:136
 msgid "Add widgets here to appear in your footer."
 msgstr "フッターに表示するウィジェットをここに追加します。"
 
-#: functions.php:139
+#: functions.php:134
 msgid "Footer 2"
 msgstr "フッター 2"
 
-#: functions.php:175
+#: functions.php:188
 msgid "expand child menu"
 msgstr "サブメニューを展開"
 
-#: functions.php:176
+#: functions.php:189
 msgid "collapse child menu"
 msgstr "サブメニューを閉じる"
 
@@ -107,20 +115,44 @@ msgstr "サブメニューを閉じる"
 msgid "Skip to content"
 msgstr "コンテンツへスキップ"
 
-#: header.php:43
+#: header.php:41
 msgid "Menu"
 msgstr "Menu"
 
-#: inc/customizer.php:32
+#: inc/custom-header.php:83
+msgid "Play background video"
+msgstr "背景動画を再生"
+
+#: inc/custom-header.php:84
+msgid "Pause background video"
+msgstr "背景動画を一時停止"
+
+#: inc/customizer.php:38
+msgid "Color Scheme"
+msgstr "配色"
+
+#: inc/customizer.php:40
+msgid "Gray"
+msgstr "グレー"
+
+#: inc/customizer.php:41
+msgid "Blue Gray"
+msgstr "青灰色"
+
+#: inc/customizer.php:42
+msgid "Custom"
+msgstr "カスタム"
+
+#: inc/customizer.php:63
 msgid "Theme Options"
 msgstr "テーマオプション"
 
-#: inc/customizer.php:46
+#: inc/customizer.php:77
 #, php-format
 msgid "Front Page Section %d Content"
 msgstr "フロントページセクション %d のコンテンツ"
 
-#: inc/customizer.php:47
+#: inc/customizer.php:78
 msgid ""
 "Select pages to feature in each area from the dropdowns. Add an image to a "
 "section by setting a featured image in the page editor. Empty sections will "

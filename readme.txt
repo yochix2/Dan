@@ -36,11 +36,18 @@ Font License: SIL OFL 1.1
 Code License: MIT License
 Source      : https://fontawesome.com/
 
-object-fit-images
-License     : MIT License
-Source      : https://github.com/bfred-it/object-fit-images
-
 == Changelog ==
+
+= 1.1.1 (2018.07.01) =
+* Added color schema customizer
+* Added footer social links menu
+* Fixed header.php
+* Fixed style.css
+* Fixed rtl.css
+* Changed display of video play/pause button in custom header
+* Changed Font Awesome Free to ver 5.1.0
+* Deleted custom background
+* Deleted object-fit-images script
 
 = 1.1.0 =
 * Added link to privacy policy page in footer
