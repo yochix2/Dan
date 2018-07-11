@@ -26,6 +26,37 @@ function dan_customize_register( $wp_customize ) {
 	) );
 
 	/**
+	 * Custom colors.
+	 */
+	$wp_customize->add_setting( 'colorscheme', array(
+		'default'           => 'gray',
+		'sanitize_callback' => 'dan_sanitize_colorscheme',
+	) );
+
+	$wp_customize->add_control( 'colorscheme', array(
+		'type'    => 'radio',
+		'label'    => __( 'Color Scheme', 'dan' ),
+		'choices'  => array(
+			'gray'  => __( 'Gray', 'dan' ),
+			'blue-gray'   => __( 'Blue Gray', 'dan' ),
+			'custom' => __( 'Custom', 'dan' ),
+		),
+		'section'  => 'colors',
+		'priority' => 5,
+	) );
+
+	$wp_customize->add_setting( 'colorscheme_hue', array(
+		'default'           => 250,
+		'sanitize_callback' => 'absint', // The hue is stored as a positive integer.
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'colorscheme_hue', array(
+		'mode' => 'hue',
+		'section'  => 'colors',
+		'priority' => 6,
+	) ) );
+
+	/**
 	 * Theme options.
 	 */
 	$wp_customize->add_section( 'theme_options', array(
@@ -61,12 +92,35 @@ function dan_customize_register( $wp_customize ) {
 add_action( 'customize_register', 'dan_customize_register' );
 
 /**
+ * Sanitize the colorscheme.
+ *
+ * @param string $input Color scheme.
+ */
+function dan_sanitize_colorscheme( $input ) {
+	$valid = array( 'gray', 'blue-gray', 'custom' );
+
+	if ( in_array( $input, $valid, true ) ) {
+		return $input;
+	}
+
+	return 'gray';
+}
+
+/**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function dan_customize_preview_js() {
 	wp_enqueue_script( 'dan_customizer', get_template_directory_uri() . '/assets/js/customizer.js', array( 'customize-preview' ), false, true );
 }
 add_action( 'customize_preview_init', 'dan_customize_preview_js' );
+
+/**
+ * Load dynamic logic for the customizer controls area.
+ */
+function dan_customize_controls_js() {
+	wp_enqueue_script( 'dan-customize-controls', get_template_directory_uri() . '/assets/js/customize-controls.js', array(), false, true );
+}
+add_action( 'customize_controls_enqueue_scripts', 'dan_customize_controls_js' );
 
 /**
  * Render the site title for the selective refresh partial.

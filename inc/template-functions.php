@@ -47,6 +47,10 @@ function dan_body_classes( $classes ) {
 		$classes[] = 'has-sidebar';
 	}
 
+	// Get the colorscheme or the default if there isn't one.
+	$colors = dan_sanitize_colorscheme( get_theme_mod( 'colorscheme', 'gray' ) );
+	$classes[] = 'colors-' . $colors;
+
 	return $classes;
 }
 add_filter( 'body_class', 'dan_body_classes' );
