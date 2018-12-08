@@ -2,7 +2,7 @@
 
 Author: Yochi
 Tags: two-columns, right-sidebar, accessibility-ready, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog
-Tested up to: 4.9.6
+Tested up to: 5.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
@@ -38,7 +38,20 @@ Source      : https://fontawesome.com/
 
 == Changelog ==
 
-= 1.1.1 (2018.07.01) =
+= 1.1.3 - December 7 2018 =
+* Added front end and editor styles for the new block-based editor
+* Changed Font Awesome Free to ver 5.5.0
+
+= 1.1.2 - July 27 2018 =
+* Supports WooCommerce
+* Added woocommerce.php
+* Added woocommerce.css
+* Added woocommerce-rtl.css
+* Changed Font Awesome Free to ver 5.2.0
+* Fixed color-patterns.php
+* Fixed style.css
+
+= 1.1.1 - July 1 2018 =
 * Added color schema customizer
 * Added footer social links menu
 * Fixed header.php

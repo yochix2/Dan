@@ -28,7 +28,7 @@ function dan_custom_colors_css() {
  */
 
 body.colors-custom  {
-	background: hsl( ' . $hue . ', ' . $saturation . ', 99% );
+	background-color: hsl( ' . $hue . ', ' . $saturation . ', 99% );
 }
 
 body.colors-custom ,
@@ -44,12 +44,12 @@ body.colors-custom ,
 .colors-custom pre,
 .colors-custom tbody th,
 .colors-custom thead th {
-	background: hsl( ' . $hue . ', ' . $saturation . ', 95% );
+	background-color: hsl( ' . $hue . ', ' . $saturation . ', 95% );
 }
 
 .colors-custom td,
 .colors-custom th,
-.colors-custom thead th{
+.colors-custom thead th {
 	border-color: hsl( ' . $hue . ', ' . $saturation . ', 90% );
 }
 
@@ -57,7 +57,7 @@ body.colors-custom ,
 .colors-custom input[type=button],
 .colors-custom input[type=reset],
 .colors-custom input[type=submit] {
-	background: hsl( ' . $hue . ', ' . $saturation . ', 85% );
+	background-color: hsl( ' . $hue . ', ' . $saturation . ', 85% );
 	color: hsl( ' . $hue . ', ' . $saturation . ', 25% ):
 }
 
@@ -83,8 +83,9 @@ body.colors-custom ,
 
 .colors-custom .site-header,
 .colors-custom .wp-custom-header,
-.colors-custom .social-navigation a {
-	background: hsl( ' . $hue . ', ' . $saturation . ', 50% );
+.colors-custom .social-navigation a,
+.colors-custom .more-link {
+	background-color: hsl( ' . $hue . ', ' . $saturation . ', 35% );
 }
 
 .colors-custom .site-description {
@@ -101,24 +102,24 @@ body.colors-custom ,
 
 @media screen and (max-width:767px){
 	.colors-custom .main-navigation {
-		background: hsla( ' . $hue . ', ' . $saturation . ', 50%, .9 );
+		background-color: hsla( ' . $hue . ', ' . $saturation . ', 35%, .9 );
 	}
 	.colors-custom .main-navigation li+li,
 	.dropdown-toggle::after {
-		border-color: hsla( ' . $hue . ', ' . $saturation . ', 65%, .9 );
+		border-color: hsla( ' . $hue . ', ' . $saturation . ', 65%, .2 );
 	}
 }
 
 @media screen and (min-width:768px) {
-	.colors-custom .main-navigation #primary-menu>.current-menu-ancestor:after,
-	.colors-custom .main-navigation #primary-menu>.current-menu-item:after,
-	.colors-custom .main-navigation #primary-menu>.current_page_ancestor:after,.
-	.colors-custom main-navigation #primary-menu>.current_page_item:after {
+	.colors-custom .main-navigation #primary-menu > .current_page_item::after,
+	.colors-custom .main-navigation #primary-menu > .current-menu-item::after,
+	.colors-custom .main-navigation #primary-menu > .current_page_ancestor::after,
+	.colors-custom .main-navigation #primary-menu > .current-menu-ancestor::after {
 		border-color: hsl( ' . $hue . ', ' . $saturation . ', 80% );
 	}
 
 	.colors-custom .main-navigation ul ul {
-		background: hsl( ' . $hue . ', ' . $saturation . ', 48% );
+		background-color: hsl( ' . $hue . ', ' . $saturation . ', 30% );
 		color: hsl( ' . $hue . ', ' . $saturation . ', 100% );
 	}
 	.colors-custom .main-navigation ul ul a{
@@ -132,7 +133,7 @@ body.colors-custom ,
 .colors-custom .dropdown-toggle,
 .colors-custom .dropdown-toggle:hover,
 .colors-custom .dropdown-toggle:focus {
-	background: transparent;
+	background-color: transparent;
 }
 
 .colors-custom .page-numbers.current:after,
@@ -155,7 +156,7 @@ body.colors-custom ,
 }
 
 .colors-custom .site-footer {
-	background: hsl( ' . $hue . ', ' . $saturation . ', 96.5% );
+	background-color: hsl( ' . $hue . ', ' . $saturation . ', 96.5% );
 	border-color: hsl( ' . $hue . ', ' . $saturation . ', 96.5% );
 }
 .colors-custom .site-info {
@@ -163,7 +164,7 @@ body.colors-custom ,
 }
 
 .colors-custom .sticky-post {
-	background: hsl( ' . $hue . ', ' . $saturation . ', 40% );
+	background-color: hsl( ' . $hue . ', ' . $saturation . ', 30% );
 }
 
 .colors-custom .entry-meta,
@@ -182,7 +183,6 @@ body.colors-custom ,
 }
 
 .colors-custom .more-link {
-	background: hsl( ' . $hue . ', ' . $saturation . ', 50% );
 	color: hsl( ' . $hue . ', ' . $saturation . ', 100% );
 }
 
@@ -195,6 +195,31 @@ body.colors-custom ,
 .colors-custom .entry-content h2,
 .colors-custom .entry-content h3 {
 	border-color: hsl( ' . $hue . ', ' . $saturation . ', 90% );
+}
+
+.colors-custom .wp-block-table td,
+.colors-custom .wp-block-table th {
+	border-color: hsl( ' . $hue . ', ' . $saturation . ', 90% );
+}
+
+.colors-custom .wp-block-button .wp-block-button__link,
+.colors-custom .wp-block-file .wp-block-file__button,
+.colors-custom .wp-block-button .wp-block-button__link:hover,
+.colors-custom .wp-block-button .wp-block-button__link:focus,
+.colors-custom .wp-block-file .wp-block-file__button:hover,
+.colors-custom .wp-block-file .wp-block-file__button:focus {
+	background-color: hsl( ' . $hue . ', ' . $saturation . ', 35% );
+}
+
+.colors-custom .wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color),
+.colors-custom .wp-block-button.is-style-outline .wp-block-button__link:focus:not(.has-text-color),
+.colors-custom .wp-block-button.is-style-outline .wp-block-button__link:active:not(.has-text-color) {
+	color: hsl( ' . $hue . ', ' . $saturation . ', 35% );
+}
+
+.colors-custom .wp-block-button.is-style-outline .wp-block-button__link:hover {
+	border-color: hsl( ' . $hue . ', ' . $saturation . ', 35% );
+	color: hsl( ' . $hue . ', ' . $saturation . ', 35% );
 }';
 
 	/**

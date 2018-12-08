@@ -1,11 +1,11 @@
-# Dan v1.1.1
+# Dan v1.1.3
 # Copyright (C) 2017 Yochi
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Dan v1.1.1\n"
+"Project-Id-Version: Dan v1.1.3\n"
 "Report-Msgid-Bugs-To: Yochi <info@yochix2.com>\n"
-"POT-Creation-Date: 2018-06-30 21:15+0900\n"
+"POT-Creation-Date: 2018-07-27 17:41+0900\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Yochi <info@yochix2.com>\n"
 "Language-Team: Yochi\n"
@@ -20,7 +20,7 @@ msgstr ""
 "esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;"
 "_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
 "X-Poedit-Basepath: ..\n"
-"X-Generator: Poedit 2.0.8\n"
+"X-Generator: Poedit 2.1.1\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: 404.php:16
@@ -31,15 +31,15 @@ msgstr "お探しのページが見つかりません。"
 msgid "It looks like nothing was found at this location. Maybe try a search?"
 msgstr "こちらには何もありません。検索をお試しください。"
 
-#: archive.php:41 index.php:46 search.php:41
+#: archive.php:41 inc/woocommerce.php:290 index.php:46 search.php:41
 msgid "Previous page"
 msgstr "前のページへ"
 
-#: archive.php:42 index.php:47 search.php:42
+#: archive.php:42 inc/woocommerce.php:291 index.php:47 search.php:42
 msgid "Next page"
 msgstr "次のページへ"
 
-#: archive.php:43 index.php:48 search.php:43
+#: archive.php:43 inc/woocommerce.php:292 index.php:48 search.php:43
 msgid "Page"
 msgstr "ページ"
 
@@ -206,6 +206,23 @@ msgstr "<span class=\"screen-reader-text\">\"%s\"の</span>続きを読む"
 msgid "Front Page Section %1$s Placeholder"
 msgstr "フロントページセクション %1$s プレースホルダ"
 
+#: inc/woocommerce.php:203
+msgid "View your shopping cart"
+msgstr "カートを表示"
+
+#: inc/woocommerce.php:207
+#, php-format
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] "%d 件"
+
+#: inc/woocommerce.php:259
+#, fuzzy
+#| msgid "Home"
+msgctxt "breadcrumb"
+msgid "Home"
+msgstr "ホーム"
+
 #: search.php:21
 #, php-format
 msgid "Search Results for: %s"
@@ -279,9 +296,6 @@ msgstr "ページ:"
 
 #~ msgid "Add widgets here."
 #~ msgstr "ここにウィジェットを追加。"
-
-#~ msgid "Home"
-#~ msgstr "ホーム"
 
 #~ msgid ""
 #~ "<span class=\"fa fa-clock-o\" aria-hidden=\"true\"></span><span class="
