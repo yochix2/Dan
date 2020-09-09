@@ -2,7 +2,8 @@
 
 Author: Yochi
 Tags: two-columns, right-sidebar, accessibility-ready, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog
-Tested up to: 5.0
+Requires at least: 5.3
+Tested up to: 5.3
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
@@ -37,6 +38,15 @@ Code License: MIT License
 Source      : https://fontawesome.com/
 
 == Changelog ==
+
+= 1.2.0 - October 29 2019 =
+
+= 1.1.5 - October 06 2019 =
+* Update Font Awesome 5 Free to ver 5.11.2
+
+= 1.1.4 - May 29 2019 =
+* Added `wp_body_open` directly after the `body` tag
+* Update Font Awesome 5 Free to ver 5.8.2
 
 = 1.1.3 - December 7 2018 =
 * Added front end and editor styles for the new block-based editor

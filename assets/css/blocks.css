@@ -75,7 +75,7 @@ p.has-drop-cap:not(:focus):first-letter {
 /* Blockquote */
 .wp-block-quote:not(.is-large),
 .wp-block-quote:not(.is-style-large) {
-	padding: 10px 20px;
+	padding: 20px;
 	border: 0;
 }
 
@@ -85,13 +85,16 @@ p.has-drop-cap:not(:focus):first-letter {
 	line-height: 1.5;
 }
 
-.wp-block-quote.alignleft p:last-of-type,
-.wp-block-quote.alignright p:last-of-type {
+.wp-block-quote p:first-of-type{
+	margin-top: 0;
+}
+
+.wp-block-quote p:last-of-type {
 	margin-bottom: 0;
 }
 
 .wp-block-quote cite {
-	margin-top: 10px;
+	margin-top: 20px;
 	color: inherit;
 	font-size: inherit;
 }
@@ -173,69 +176,25 @@ p.has-drop-cap:not(:focus):first-letter {
 	border-color: #e0e0e0;
 }
 
+.wp-block-table p {
+	margin-top: 0;
+}
+
+.wp-block-table p:last-child {
+	margin-bottom: 0;
+}
+
 .wp-block-table.is-style-stripes {
 	border-collapse: collapse;
+}
+
+.wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
+	background-color: #f5f5f5;
 }
 
 /*--------------------------------------------------------------
 # Blocks - Layout Elements
 --------------------------------------------------------------*/
-
-/* Buttons */
-.wp-block-button .wp-block-button__link,
-.wp-block-file .wp-block-file__button {
-	display: inline-block;
-	padding: 15px 20px;
-	background-color: #424242;
-	border: 0;
-	border-radius: 3px;
-	font-size: 14px;
-	font-weight: 700;
-	text-decoration: none;
-	text-shadow: none;
-	line-height: 1;
-	cursor: pointer;
-	outline: none;
-}
-
-.wp-block-button .wp-block-button__link:hover,
-.wp-block-button .wp-block-button__link:focus,
-.wp-block-file .wp-block-file__button:hover,
-.wp-block-file .wp-block-file__button:focus {
-	background-color: #424242;
-	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(33, 33, 33, 0.1)), to(rgba(33, 33, 33, 0.1)));
-	background-image: linear-gradient(rgba(33, 33, 33, 0.1), rgba(33, 33, 33, 0.1));
-}
-
-.wp-block-button .wp-block-button__link:focus,
-.wp-block-file .wp-block-file__button:focus {
-	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(33, 33, 33, 0.08)), to(rgba(33, 33, 33, 0.08)));
-	background-image: linear-gradient(rgba(33, 33, 33, 0.08), rgba(33, 33, 33, 0.08));
-}
-
-.wp-block-button:not(.is-style-squared) .wp-block-button__link {
-	border-radius: 5px;
-}
-
-.wp-block-button.is-style-outline .wp-block-button__link,
-.wp-block-button.is-style-outline .wp-block-button__link:focus,
-.wp-block-button.is-style-outline .wp-block-button__link:active {
-  	background: transparent !important;
-	border: 2px solid currentColor;
-}
-
-.wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color),
-.wp-block-button.is-style-outline .wp-block-button__link:focus:not(.has-text-color),
-.wp-block-button.is-style-outline .wp-block-button__link:active:not(.has-text-color) {
-	color: #424242;
-}
-
-.wp-block-button.is-style-outline .wp-block-button__link:hover {
-	border-color: #212121;
-	color: #212121;
-	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(66, 66, 66, 0.1)), to(rgba(66, 66, 66, 0.1)));
-	background-image: linear-gradient(rgba(66, 66, 66, 0.1), rgba(66, 66, 66, 0.1));
-}
 
 /* Separator */
 .wp-block-separator {
@@ -245,15 +204,6 @@ p.has-drop-cap:not(:focus):first-letter {
 
 .wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
 	max-width: 100px;
-}
-
-/* Media & Text */
-.wp-block-media-text {
-	margin-bottom: 20px;
-}
-
-.wp-block-media-text *:last-child {
-	margin-bottom: 0;
 }
 
 /*--------------------------------------------------------------
@@ -311,14 +261,14 @@ p.has-drop-cap:not(:focus):first-letter {
 .wp-block-categories li,
 .wp-block-latest-posts li {
 	margin-top: 10px;
-    margin-bottom: 10px;
+	margin-bottom: 10px;
 }
 
 .wp-block-archives li a,
 .wp-block-categories li a,
 .wp-block-latest-posts li a {
 	color: inherit;
-    text-decoration: none;
+	text-decoration: none;
 }
 
 .wp-block-archives li a:hover,
@@ -335,4 +285,9 @@ p.has-drop-cap:not(:focus):first-letter {
 .wp-block-latest-posts.aligncenter {
 	list-style-position: inside;
 	text-align: center;
+}
+
+/* Search */
+.wp-block-search .wp-block-search__input {
+	flex: 1;
 }

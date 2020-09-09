@@ -14,48 +14,46 @@
 
 get_header(); ?>
 
-<div id="primary" class="content-area">
-	<main id="main" class="site-main" role="main">
+<main id="primary" class="content-area post-list" role="main">
+
+<?php
+if ( have_posts() ) :
+
+	if ( is_home() && ! is_front_page() ) : ?>
+		<header>
+			<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+		</header>
 
 	<?php
-	if ( have_posts() ) :
+	endif;
 
-		if ( is_home() && ! is_front_page() ) : ?>
-			<header>
-				<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-			</header>
+	/* Start the Loop */
+	while ( have_posts() ) : the_post();
 
-		<?php
-		endif;
+		/*
+		 * Include the Post-Format-specific template for the content.
+		 * If you want to override this in a child theme, then include a file
+		 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+		 */
+		get_template_part( 'template-parts/content', 'excerpt' );
 
-		/* Start the Loop */
-		while ( have_posts() ) : the_post();
+	/* End the loop */
+	endwhile;
 
-			/*
-			 * Include the Post-Format-specific template for the content.
-			 * If you want to override this in a child theme, then include a file
-			 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-			 */
-			get_template_part( 'template-parts/content', 'excerpt' );
+	/* Previous/next page navigation. */
+	the_posts_pagination( array(
+		'prev_text'          => '<span class="fas fa-angle-double-left" aria-hidden="true"></span> ' . __( 'Previous page', 'dan' ),
+		'next_text'          => __( 'Next page', 'dan' ) . ' <span class="fas fa-angle-double-right" aria-hidden="true"></span>',
+		'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'dan' ) . '</span>',
+	) );
 
-		/* End the loop */
-		endwhile;
+else :
 
-		/* Previous/next page navigation. */
-		the_posts_pagination( array(
-			'prev_text'          => '<span class="fas fa-angle-double-left" aria-hidden="true"></span> ' . __( 'Previous page', 'dan' ),
-			'next_text'          => __( 'Next page', 'dan' ) . ' <span class="fas fa-angle-double-right" aria-hidden="true"></span>',
-			'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'dan' ) . '</span>',
-		) );
+	get_template_part( 'template-parts/content', 'none' );
 
-	else :
+endif; ?>
 
-		get_template_part( 'template-parts/content', 'none' );
-
-	endif; ?>
-
-	</main><!-- #main -->
-</div><!-- #primary -->
+</main><!-- #primary -->
 <?php
 get_sidebar();
 get_footer();

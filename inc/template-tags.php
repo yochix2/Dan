@@ -130,7 +130,7 @@ if ( ! function_exists( 'dan_excerpt_more' ) && ! is_admin() ) :
  * @return string 'Continue reading' link prepended with an ellipsis.
  */
 function dan_excerpt_more() {
-	$link = sprintf( '<a href="%1$s" class="more-link">%2$s</a>',
+	$link = sprintf( '<a href="%1$s" class="more-link"><span class="fas fa-chevron-right" aria-hidden="true"></span> %2$s</a>',
 		esc_url( get_permalink( get_the_ID() ) ),
 		/* translators: %s: Name of current post */
 		sprintf( __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'dan' ), get_the_title( get_the_ID() ) )
@@ -139,35 +139,6 @@ function dan_excerpt_more() {
 }
 add_filter( 'excerpt_more', 'dan_excerpt_more' );
 endif;
-
-/**
- * Display a front page section.
- *
- * @param WP_Customize_Partial $partial Partial associated with a selective refresh request.
- * @param integer              $id Front page section to display.
- */
-function dan_front_page_section( $partial = null, $id = 0 ) {
-	if ( is_a( $partial, 'WP_Customize_Partial' ) ) {
-		// Find out the id and set it up during a selective refresh.
-		global $dan_counter;
-		$id         = str_replace( 'panel_', '', $partial->id );
-		$dan_counter = $id;
-	}
-
-	global $post; // Modify the global post object before setting up post data.
-	if ( get_theme_mod( 'panel_' . $id ) ) {
-		$post = get_post( get_theme_mod( 'panel_' . $id ) );
-		setup_postdata( $post );
-		set_query_var( 'panel', $id );
-
-		get_template_part( 'template-parts/content', 'front-page-panels' );
-
-		wp_reset_postdata();
-	} elseif ( is_customize_preview() ) {
-		// The output placeholder anchor.
-		echo '<article class="panel-placeholder panel dan-panel dan-panel' . $id . '" id="panel' . $id . '"><span class="dan-panel-title">' . sprintf( __( 'Front Page Section %1$s Placeholder', 'dan' ), $id ) . '</span></article>';
-	}
-}
 
 /**
  * Returns true if a blog has more than 1 category.
@@ -211,4 +182,21 @@ function dan_category_transient_flusher() {
 	delete_transient( 'dan_categories' );
 }
 add_action( 'edit_category', 'dan_category_transient_flusher' );
-add_action( 'save_post',     'dan_category_transient_flusher' );
+
+if ( ! function_exists( 'wp_body_open' ) ) :
+	/**
+	 * Fire the wp_body_open action.
+	 *
+	 * Added for backwards compatibility to support pre 5.2.0 WordPress versions.
+	 *
+	 * @since Dan 1.2.0
+	 */
+	function wp_body_open() {
+		/**
+		 * Triggered after the opening <body> tag.
+		 *
+		 * @since Dan 1.2.0
+		 */
+		do_action( 'wp_body_open' );
+	}
+endif;

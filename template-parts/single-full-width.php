@@ -1,8 +1,11 @@
 <?php
 /**
- * The template for displaying all single posts
+ * Template Name: Single Full Width
+ * Template Post Type: post
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
+ * The template for displaying single posts without a sidebar.
+ *
+ * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package Dan
  */
@@ -30,6 +33,4 @@ endwhile; // End of the loop.
 ?>
 
 </main><!-- #primary -->
-<?php
-get_sidebar();
-get_footer();
+<?php get_footer();
