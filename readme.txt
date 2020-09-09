@@ -2,8 +2,7 @@
 
 Author: Yochi
 Tags: two-columns, right-sidebar, accessibility-ready, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog
-Requires at least: 5.3
-Tested up to: 5.3
+Tested up to: 5.5
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
@@ -39,7 +38,15 @@ Source      : https://fontawesome.com/
 
 == Changelog ==
 
-= 1.2.0 - October 29 2019 =
+= 1.1.7 - September 9 2020 =
+* Not supports WooCommerce
+* Update Font Awesome 5 Free to ver 5.14.0
+* Accessibility improvements to widgets outputting lists of links
+
+= 1.1.6 - December 2 2019 =
+* Switch default markup for link and style tags to output html5
+* Fixed header.php
+* Fixed Gutenberg block style
 
 = 1.1.5 - October 06 2019 =
 * Update Font Awesome 5 Free to ver 5.11.2

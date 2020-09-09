@@ -7,14 +7,6 @@
  * @package Dan
  */
 
-/**
- * Dan only works in WordPress 5.3 or later.
- */
-if ( version_compare( $GLOBALS['wp_version'], '5.3-alpha', '<' ) ) {
-	require get_template_directory() . '/inc/back-compat.php';
-	return;
-}
-
 if ( ! function_exists( 'dan_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -66,11 +58,14 @@ function dan_setup() {
 	 * to output valid HTML5.
 	 */
 	add_theme_support( 'html5', array(
+		'navigation-widgets',
 		'search-form',
 		'comment-form',
 		'comment-list',
 		'gallery',
 		'caption',
+		'script',
+		'style',
 	) );
 
 	// Enable support for Post Formats.
@@ -98,70 +93,9 @@ function dan_setup() {
 	
 	// Load default block styles.
 	add_theme_support( 'wp-block-styles' );
-
-	// Add support for full and wide align images.
-	add_theme_support( 'align-wide' );
-
+	
 	// Load regular editor styles into the new block-based editor.
 	add_theme_support( 'editor-styles' );
-
-	// Add custom editor font sizes.
-	add_theme_support(
-		'editor-font-sizes',
-		array(
-			array(
-				'name'      => __( 'Small', 'dan' ),
-				'shortName' => __( 'S', 'dan' ),
-				'size'      => 14,
-				'slug'      => 'small',
-			),
-			array(
-				'name'      => __( 'Normal', 'dan' ),
-				'shortName' => __( 'M', 'dan' ),
-				'size'      => 16,
-				'slug'      => 'normal',
-			),
-			array(
-				'name'      => __( 'Large', 'dan' ),
-				'shortName' => __( 'L', 'dan' ),
-				'size'      => 24,
-				'slug'      => 'large',
-			),
-			array(
-				'name'      => __( 'Huge', 'dan' ),
-				'shortName' => __( 'XL', 'dan' ),
-				'size'      => 32,
-				'slug'      => 'huge',
-			),
-		)
-	);
-
-	// Editor color palette.
-	add_theme_support(
-		'editor-color-palette',
-		array(
-			array(
-				'name'  => __( 'Dark Gray', 'dan' ),
-				'slug'  => 'dark-gray',
-				'color' => '#424242',
-			),
-			array(
-				'name'  => __( 'Gray', 'dan' ),
-				'slug'  => 'dark-gray',
-				'color' => '#616161',
-			),
-			array(
-				'name'  => __( 'Light Gray', 'dan' ),
-				'slug'  => 'light-gray',
-				'color' => '#e0e0e0',
-			),
-			array(
-				'name'  => __( 'White', 'dan' ),
-				'slug'  => 'white',
-				'color' => '#fafafa',
-			),
-		)
-	);
 
 	// Add support for responsive embeds.
 	add_theme_support( 'responsive-embeds' );
@@ -182,9 +116,9 @@ add_action( 'after_setup_theme', 'dan_setup' );
 function dan_content_width() {
 
 	// Check if page template is full width page.
-	if ( is_page_template( 'full-width-page.php' ) ){
-		$GLOBALS['content_width'] = apply_filters( 'dan_content_width', 960 );
-	}
+    if ( is_page_template( 'full-width-page.php' ) ){
+        $GLOBALS['content_width'] = apply_filters( 'dan_content_width', 960 );
+    }
 }
 add_action( 'template_redirect', 'dan_content_width', 0 );
 
@@ -251,17 +185,17 @@ function dan_scripts() {
 	$version = $my_theme->get( 'Version' );
 
 	// Add Font Awesome, used in the main stylesheet.
-	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/font-awesome/css/all.min.css', array(), '5.11.2' );
+	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/font-awesome/css/all.min.css', array(), '5.8.2' );
 
 	// Theme stylesheet.
-	wp_enqueue_style( 'dan-style', get_stylesheet_uri(), array(), date('U') );
+	wp_enqueue_style( 'dan-style', get_stylesheet_uri() );
 
 	// Theme block stylesheet.
-	wp_enqueue_style( 'dan-block-style', get_theme_file_uri( '/assets/css/blocks.css' ), array( 'dan-style' ), '1.0' );
+	wp_enqueue_style( 'dan-block-style', get_theme_file_uri( '/assets/css/blocks.css' ), array( 'dan-style' ), $version );
 
 	// Load the blue gray colorscheme.
 	if ( 'blue-gray' === get_theme_mod( 'colorscheme', 'gray' ) ) {
-		wp_enqueue_style( 'dan-colors-blue-gray', get_theme_file_uri( '/assets/css/colors-blue-gray.css' ), array( 'dan-style' ), '1.0' );
+		wp_enqueue_style( 'dan-colors-blue-gray', get_theme_file_uri( '/assets/css/colors-blue-gray.css' ), array( 'dan-style' ), $version );
 	}
 
 	wp_enqueue_script( 'dan-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array( 'jquery' ), $version, true );
@@ -279,17 +213,25 @@ function dan_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'dan_scripts' );
 
-
-
 /**
  * Enqueue editor styles for Gutenberg.
  *
  * @since Dan 1.1.2
  */
 function dan_block_editor_styles() {
-	wp_enqueue_style( 'dan-block-editor-style', get_theme_file_uri( '/assets/css/editor-blocks.css' ), array(), date('U') );
+	wp_enqueue_style( 'dan-editor-block-editor-style', get_theme_file_uri( '/assets/css/editor-blocks.css' ) );
 }
 add_action( 'enqueue_block_editor_assets', 'dan_block_editor_styles' );
+
+/**
+ * Use front-page.php when Front page displays is set to a static page.
+ *
+ * @return string The template to be used: blank if is_home() is true (defaults to index.php), else $template.
+ */
+function dan_front_page_template( $template ) {
+	return is_home() ? '' : $template;
+}
+add_filter( 'frontpage_template',  'dan_front_page_template' );
 
 /**
  * Modifies tag cloud widget arguments to display all tags in the same font size
@@ -332,15 +274,3 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
-
-/**
- * Load WooCommerce compatibility file.
- */
-if ( class_exists( 'WooCommerce' ) ) {
-	require get_template_directory() . '/inc/woocommerce.php';
-}
-
-/**
- * Gutenberg block style.
- */
-require get_template_directory() . '/inc/theme-block-style.php';

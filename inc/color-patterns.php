@@ -40,7 +40,6 @@ body.colors-custom ,
 	color: hsl( ' . $hue . ', ' . $saturation . ', 10% );
 }
 
-.colors-custom blockquote,
 .colors-custom pre,
 .colors-custom tbody th,
 .colors-custom thead th {
@@ -202,24 +201,10 @@ body.colors-custom ,
 	border-color: hsl( ' . $hue . ', ' . $saturation . ', 90% );
 }
 
-.colors-custom .wp-block-button .wp-block-button__link,
 .colors-custom .wp-block-file .wp-block-file__button,
-.colors-custom .wp-block-button .wp-block-button__link:hover,
-.colors-custom .wp-block-button .wp-block-button__link:focus,
 .colors-custom .wp-block-file .wp-block-file__button:hover,
 .colors-custom .wp-block-file .wp-block-file__button:focus {
 	background-color: hsl( ' . $hue . ', ' . $saturation . ', 35% );
-}
-
-.colors-custom .wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color),
-.colors-custom .wp-block-button.is-style-outline .wp-block-button__link:focus:not(.has-text-color),
-.colors-custom .wp-block-button.is-style-outline .wp-block-button__link:active:not(.has-text-color) {
-	color: hsl( ' . $hue . ', ' . $saturation . ', 35% );
-}
-
-.colors-custom .wp-block-button.is-style-outline .wp-block-button__link:hover {
-	border-color: hsl( ' . $hue . ', ' . $saturation . ', 35% );
-	color: hsl( ' . $hue . ', ' . $saturation . ', 35% );
 }';
 
 	/**

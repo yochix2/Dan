@@ -3,7 +3,10 @@ Theme Name: Dan
 Author: Yochi
 Author URI: https://yochix2.com/
 Description: Dan is a simple two-columns theme. On the front page, you can use a header image and multiple page sections. Features are, Font Awesome.
-Version: 1.2.0
+Version: 1.1.7
+Tested up to: 5.5
+Requires at least: 4.7
+Requires PHP: 5.2.4
 License: GNU General Public License v2 or later
 License URI: license.txt
 Text Domain: dan
@@ -37,6 +40,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 # Media
 	## Captions
 	## Galleries
+# Customizer
 # Print
 --------------------------------------------------------------*/
 
@@ -502,31 +506,6 @@ q::after{
 	content: close-quote; 
 }
 
-blockquote {
-	margin-right: 5px;
-	margin-left: 5px;
-	margin-bottom: 20px;
-	padding: 20px;
-	background-color: #f5f5f5;
-	border-radius: 3px;
-	color: #616161;
-	line-height: 1.5;
-}
-
-blockquote p:first-of-type{
-	margin-top: 0;
-}
-
-blockquote p:last-of-type {
-	margin-bottom: 0;
-}
-
-blockquote cite {
-	display: block;
-	margin-top: 20px;
-	font-style: normal;
-}
-
 address {
 	margin: 0 0 20px;
 }
@@ -651,6 +630,10 @@ table {
 thead th {
 	background-color: #eee;
 	border-bottom: solid 2px #e0e0e0;
+}
+
+tbody th {
+	background-color: #f5f5f5;
 }
 
 th,
@@ -893,65 +876,113 @@ a:active {
 --------------------------------------------------------------*/
 
 #page {
+	display: -ms-grid;
+	-ms-grid-columns: 10px 1fr 10px;
+	-ms-grid-rows: auto 40px auto 30px auto 30px auto;
 	display: grid;
-	grid-template-columns: 5px 5px 1fr 5px 5px;
+	grid-template-columns: 10px 1fr 10px;
 	grid-template-rows: auto 40px auto 30px auto 30px auto;
 	min-width: 0;
 }
 
 @media screen and (min-width: 768px) {
 	#page {
+		-ms-grid-columns: 10px 1fr 40px 200px 10px;
+		-ms-grid-rows: auto 60px auto 40px auto;
 		display: grid;
-		grid-template-columns: minmax(10px, 1fr) 1fr minmax(auto, 720px) 40px 200px 1fr minmax(10px, 1fr);
+		grid-template-columns: minmax(10px, 1fr) minmax(auto, 720px) 40px 200px minmax(10px, 1fr);
 		grid-template-rows: auto 60px auto 40px auto;
+	}
+}
+
+@media screen and (min-width: 980px) {
+	#page {
+		-ms-grid-columns: 1fr 720px 40px 200px 1fr;
+		-ms-grid-rows: auto 60px auto 40px auto;
 	}
 }
 
 /* Header */
 
 .site-header {
+	-ms-grid-column: 1;
+	-ms-grid-column-span: 3;
+	-ms-grid-row: 1;
 	grid-column-start: 1;
 	grid-column-end: -1;
 	grid-row-start: 1;
 	min-width: 0;
+	display: -ms-grid;
 	display: grid;
+	-ms-grid-columns: inherit;
+	-ms-grid-rows: auto 1fr;
 	grid-template-columns: inherit;
 	grid-template-rows: auto 1fr;
 }
 
+@media screen and (min-width: 768px) {
+	.site-header {
+		-ms-grid-column-span: 5;
+	}
+}
+
 .site-branding {
-	grid-column-start: 3;
+	-ms-grid-column: 2;
+	-ms-grid-row: 1;
+	-ms-grid-row-align: center;
+	grid-column-start: 2;
 	grid-row-start: 1;
+	-ms-flex-item-align: center;
 	align-self: center;
 }
 
 .main-navigation {
+	-ms-grid-column: 1;
+	-ms-grid-column-span: 3;
+	-ms-grid-row: 2;
+	-ms-grid-row-align: start;
 	grid-column-start: 1;
 	grid-column-end: -1;
 	grid-row-start: 2;
+	-ms-flex-item-align: start;
 	align-self: start;
 }
 
 @media screen and (min-width: 768px) {
 	.main-navigation {
-		grid-column-start: 3;
-		grid-column-end: -3;
+		-ms-grid-column: 2;
+		-ms-grid-column-span: 3;
+		-ms-grid-row: 1;
+		-ms-grid-column-align: end;
+		-ms-grid-row-align: center;
+		grid-column-start: 2;
+		grid-column-end: -2;
 		grid-row-start: 1;
 		justify-self: end;
+		-ms-flex-item-align: center;
 		align-self: center;
 	}
 }
 
 .menu-toggle {
-	grid-column-start: 3;
+	-ms-grid-column: 2;
+	-ms-grid-row: 1;
+	-ms-grid-column-align: end;
+	-ms-grid-row-align: center;
+	grid-column-start: 2;
 	grid-row-start: 1;
 	justify-self: end;
+	-ms-flex-item-align: center;
 	align-self: center;
 }
 
 /* Custom header */
 
 .wp-custom-header {
+	-ms-grid-column: 1;
+	-ms-grid-column-span: 3;
+	-ms-grid-row: 1;
+	-ms-grid-row-span: 2;
 	grid-column-start: 1;
 	grid-column-end: -1;
 	grid-row-start: 1;
@@ -959,124 +990,81 @@ a:active {
 	min-width: 0;
 }
 
+@media screen and (min-width: 768px) {
+	.wp-custom-header {
+		-ms-grid-column-span: 5;
+	}
+}
+
 .site-description {
+	-ms-grid-column: 2;
+	-ms-grid-row: 1;
+	-ms-grid-row-span: 2;
+	-ms-grid-row-align: center;
+	-ms-grid-column-align: center;
 	grid-column-start: 2;
 	grid-column-end: -2;
 	grid-row-start: 1;
 	grid-row-end: -1;
 	min-width: 0;
 	justify-self: center;
+	-ms-flex-item-align: center;
 	align-self: center;
+}
+
+@media screen and (min-width: 768px) {
+	.site-description {
+		-ms-grid-column-span: 3;
+	}
 }
 
 /* Posts and pages */
 
 #primary {
-	grid-column-start: 3;
+	-ms-grid-column: 2;
+	-ms-grid-row: 3;
+	grid-column-start: 2;
 	grid-row-start: 3;
 	min-width: 0;
 }
 
-.post-template-single-full-width #primary,
-.page-template-full-width-page #primary {
-	grid-column-start: 1;
-	grid-column-end: -1;
-	display: grid;
-	grid-template-columns: inherit;
-	grid-template-columns: subgrid;
-}
-
-.page-template-landing-page #primary {
-	grid-column-start: 1;
-	grid-column-end: -1;
-	grid-row-start: 2;
-	grid-row-end: -2;
-	display: grid;
-	grid-template-columns: inherit;
-	grid-template-columns: subgrid;
-}
-
-.post-template-single-full-width #primary > *,
-.page-template-full-width-page #primary > *,
-.page-template-landing-page #primary> * {
-	grid-column-start: 1;
-	grid-column-end: -1;
-}
-
-.post-template-single-full-width .entry,
-.page-template-full-width-page .entry,
-.page-template-landing-page .entry {
-	display: grid;
-	grid-template-columns: inherit;
-	grid-template-columns: subgrid;
-}
-
-.post-template-single-full-width .entry > *,
-.page-template-full-width-page .entry > *,
-.page-template-landing-page .entry > *,
-.post-template-single-full-width #primary >.post-navigation,
-.page-template-full-width-page #primary >.post-navigation,
-.page-template-landing-page #primary >.post-navigation,
-.post-template-single-full-width #comments,
-.page-template-full-width-page #comments,
-.page-template-landing-page #comments {
-	grid-column-start: 3;
-	grid-column-end: -3;
-}
-
-.post-template-single-full-width .entry > .entry-content,
-.page-template-full-width-page .entry > .entry-content,
-.page-template-landing-page .entry > .entry-content {
-	grid-column-start: 1;
-	grid-column-end: -1;
-	display: grid;
-	grid-template-columns: inherit;
-	grid-template-columns: subgrid;
-}
-
-.post-template-single-full-width .entry > .entry-content > *,
-.page-template-full-width-page .entry > .entry-content > *,
-.page-template-landing-page .entry > .entry-content > * {
-	grid-column-start: 3;
-	grid-column-end: -3;
-}
-
 #secondary {
-	grid-column-start: 3;
+	-ms-grid-column: 2;
+	-ms-grid-row: 5;
+	grid-column-start: 2;
 	grid-row-start: 5;
 	min-width: 0;
 }
 
 @media screen and (min-width: 768px) {
+	.dan-front-page #primary,
+	.page-template-full-width-page #primary {
+		-ms-grid-column-span: 3;
+		grid-column-end: -2;
+	}
+
 	#secondary {
-		grid-column-start: 5;
+		-ms-grid-column: 4;
+		-ms-grid-row: 3;
+		grid-column-start: 4;
 		grid-row-start: 3;
 	}
 }
 
-/* Alignments */
-
-.post-template-single-full-width .entry > .entry-content > .alignwide,
-.page-template-full-width-page .entry > .entry-content > .alignwide,
-.page-template-landing-page .entry > .entry-content > .alignwide {
-	grid-column-start: 2;
-	grid-column-end: -2;
-}
-
-.post-template-single-full-width .entry > .entry-content > .alignfull,
-.page-template-full-width-page .entry > .entry-content > .alignfull,
-.page-template-landing-page .entry > .entry-content > .alignfull {
-	grid-column-start: 1;
-	grid-column-end: -1;
-}
 
 /* Footer */
 
 .site-footer {
+	-ms-grid-column: 1;
+	-ms-grid-column-span: 3;
+	-ms-grid-row: 7;
 	grid-column-start: 1;
 	grid-column-end: -1;
 	grid-row-start: 7;
 	min-width: 0;
+	display: -ms-grid;
+	-ms-grid-columns: inherit;
+	-ms-grid-rows: auto auto;
 	display: grid;
 	grid-template-columns: inherit;
 	grid-template-rows: auto auto;
@@ -1084,21 +1072,27 @@ a:active {
 
 @media screen and (min-width: 768px) {
 	.site-footer {
-		-ms-grid-column-span: 7;
+		-ms-grid-column-span: 5;
 		-ms-grid-row: 5;
 		grid-row-start: 5;
 	}
 }
 
 .footer-widget {
-	grid-column-start: 3;
-	grid-column-end: -3;
+	-ms-grid-column: 2;
+	-ms-grid-row: 1;
+	grid-column-start: 2;
+	grid-column-end: -2;
 	grid-row-start: 1;
 	min-width: 0;
 }
 
 @media screen and (min-width: 768px) {
 	.footer-widget {
+		display: -ms-grid;
+		-ms-grid-column-span: 3;
+		-ms-grid-columns: 1fr 40px 200px;
+		-ms-grid-rows: auto;
 		display: grid;
 		grid-template-columns: 1fr 40px 200px;
 		grid-template-rows: auto;
@@ -1122,8 +1116,11 @@ a:active {
 }
 
 .site-info {
-	grid-column-start: 3;
-	grid-column-end: -3;
+	-ms-grid-column: 2;
+	-ms-grid-column-span: 3;
+	-ms-grid-row: 2;
+	grid-column-start: 2;
+	grid-column-end: -2;
 	grid-row-start: 2;
 	min-width: 0;
 }
@@ -1221,6 +1218,12 @@ a:active {
 	z-index: 2;
 }
 
+.dan-front-page .wp-custom-header {
+	height: 100vh;
+	min-height: 280px;
+	overflow: hidden;
+}
+
 .site-description {
 	position: relative;
 	margin-top: 0;
@@ -1230,6 +1233,16 @@ a:active {
 	font-weight: 700;
 	line-height: 1.4;
 	z-index: 3;
+}
+
+@media screen and (min-width: 768px) {
+	.site-description {
+		font-size: 2.2vw;
+	}
+
+	.dan-front-page .site-description {
+		font-size: 2.8vw;
+	}
 }
 
 .has-header-image .wp-custom-header img,
@@ -1879,8 +1892,8 @@ a:active {
 	}
 }
 
-.post-navigation {
-	margin: 60px 0 30px;
+.site-main .post-navigation {
+	margin: 30px 0;
 	overflow: hidden;
 }
 
@@ -1927,7 +1940,7 @@ a:active {
 
 .page-links {
 	clear: both;
-	margin: 20px 0;
+	margin: 0 0 20px;
 	font-size: 14px;
 }
 
@@ -2003,13 +2016,8 @@ a:active {
 # Content
 --------------------------------------------------------------*/
 
-.post-list {
-	display: grid;
-	grid-row-gap: 40px;
-	row-gap: 40px;
-}
-
-.post-list > .hentry {
+.hentry {
+	margin-bottom: 40px;
 	padding-bottom: 40px;
 	border-bottom: solid 1px #eee;
 }
@@ -2149,15 +2157,6 @@ a:active {
 	text-decoration: none;
 }
 
-.page-template-landing-page .entry-footer {
-	margin-top: 0;
-}
-
-.entry-footer .edit-link {
-	margin-top: 10px;
-	margin-bottom: 10px;
-}
-
 .entry-footer > span:not(:last-child) {
 	margin-right: 10px;
 }
@@ -2176,7 +2175,7 @@ a:active {
 
 .more-link {
 	display: block;
-	width: 150px;
+	width: 140px;
 	max-width: 200px;
 	margin: 20px 0 10px auto;
 	padding: 10px 15px;
@@ -2198,11 +2197,6 @@ a:active {
 	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(66, 66, 66, 0.2)), to(rgba(62, 62, 62, 0.2)));
 	background-image: linear-gradient(rgba(66, 66, 66, 0.2), rgba(62, 62, 62, 0.2));
 	color: #f5f5f5;
-}
-
-.more-link > .fas {
-	margin-right: 5px;
-	line-height: inherit;
 }
 
 /* Entry thumbnail */
@@ -2246,6 +2240,17 @@ a:active {
 .error404 .page-content .search-form,
 .search .page-content .search-form {
 	margin-bottom: 40px;
+}
+
+/* Front page */
+
+.dan-front-page .entry-header h2.entry-title {
+	margin-bottom: 20px;
+}
+
+.dan-front-page .recent-posts .hentry:last-child {
+	margin-bottom: 0;
+	border-bottom: 0;
 }
 
 /*--------------------------------------------------------------
@@ -2803,6 +2808,19 @@ object {
 	.gallery-columns-9 .gallery-caption {
 		display: none;
 	}
+}
+
+/*--------------------------------------------------------------
+# Customizer
+--------------------------------------------------------------*/
+
+/* Used for placeholder text */
+.dan-customizer.dan-front-page .dan-panel .dan-panel-title {
+	display: block;
+	margin-bottom: 20px;
+	padding: 40px;
+	border: dashed 2px #bdbdbd;
+	font-weight: 700;
 }
 
 /*--------------------------------------------------------------

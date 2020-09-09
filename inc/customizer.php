@@ -55,6 +55,39 @@ function dan_customize_register( $wp_customize ) {
 		'section'  => 'colors',
 		'priority' => 6,
 	) ) );
+
+	/**
+	 * Theme options.
+	 */
+	$wp_customize->add_section( 'theme_options', array(
+		'title'    => __( 'Theme Options', 'dan' ),
+		'priority' => 130, // Before Additional CSS.
+	) );
+
+	$num_sections = apply_filters( 'dan_front_page_sections', 4 );
+
+	for ( $i = 1; $i <= $num_sections; $i++ ) {
+		$wp_customize->add_setting( 'panel_' . $i, array(
+			'default'           => false,
+			'sanitize_callback' => 'absint',
+			'transport'         => 'postMessage',
+ 		) );
+
+		$wp_customize->add_control( 'panel_' . $i, array(
+			'label'           => sprintf( __( 'Front Page Section %d Content', 'dan' ), $i ),
+			'description'     => ( 1 !== $i ? '' : __( 'Select pages to feature in each area from the dropdowns. Add an image to a section by setting a featured image in the page editor. Empty sections will not be displayed.', 'dan' ) ),
+			'section'         => 'theme_options',
+			'type'            => 'dropdown-pages',
+			'allow_addition'  => true,
+			'active_callback' => 'dan_is_static_front_page',
+		) );
+ 
+		$wp_customize->selective_refresh->add_partial( 'panel_' . $i, array(
+			'selector'            => '#panel' . $i,
+			'render_callback'     => 'dan_front_page_section',
+			'container_inclusive' => true,
+		) );
+	}
 }
 add_action( 'customize_register', 'dan_customize_register' );
 

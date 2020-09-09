@@ -109,7 +109,7 @@ Description: Used to style Gutenberg Blocks in the editor.
 --------------------------------------------------------------*/
 /* Main column width */
 .wp-block {
-	max-width: 750px; /* 720px + 30px to account for padding. */
+	max-width: 720px;
 }
 
 /* Background color */
@@ -177,22 +177,6 @@ Description: Used to style Gutenberg Blocks in the editor.
 	margin-right: 20px;
 }
 
-/* Quote styles */
-
-.editor-block-list__block blockquote {
-	border: 0;
-}
-
-.editor-block-list__block blockquote p {
-	font-size: 16px;
-}
-
-.editor-block-list__block blockquote cite {
-	display: block;
-	margin-top: 10px;
-	font-style: normal;
-}
-
 /* Caption styles*/
 
 [class^="wp-block-"]:not(.wp-block-gallery) figcaption {
@@ -225,7 +209,7 @@ Description: Used to style Gutenberg Blocks in the editor.
 /* Quote */
 .wp-block-quote:not(.is-large),
 .wp-block-quote:not(.is-style-large) {
-	padding: 20px;
+	padding: 10px 20px;
 	border: 0;
 }
 
@@ -235,16 +219,13 @@ Description: Used to style Gutenberg Blocks in the editor.
 	line-height: 1.5;
 }
 
-.wp-block-quote p:first-of-type{
-	margin-top: 0;
-}
-
-.wp-block-quote p:last-of-type {
+.wp-block-quote.alignleft p:last-of-type,
+.wp-block-quote.alignright p:last-of-type {
 	margin-bottom: 0;
 }
 
 .wp-block-quote .wp-block-quote__citation {
-	margin-top: 20px;
+	margin-top: 10px;
 	color: inherit;
 	font-size: inherit;
 }
@@ -305,44 +286,10 @@ Description: Used to style Gutenberg Blocks in the editor.
 	border-radius: 3px;
 }
 
-/* Pullquote */
-.wp-block-pullquote {
-	padding: 20px 0;
-	border: 0;
-}
-
-.wp-block-pullquote blockquote>.block-library-pullquote__content .editor-rich-text__tinymce[data-is-empty=true]:before,
-.wp-block-pullquote blockquote>.editor-rich-text p {
-	font-size: 1em;
-	line-height: 1.5;
-}
-
-.wp-block-pullquote .wp-block-pullquote__citation {
-	font-size: inherit;
-	text-transform: none;
-}
-
-.wp-block-quote.is-large .wp-block-quote__citation,
-.wp-block-quote.is-style-large .wp-block-quote__citation {
-	text-align: right;
-}
-
 /* Table */
 .wp-block-table td,
 .wp-block-table th {
 	border-color: #e0e0e0;
-}
-
-.wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
-	background-color: #f5f5f5;
-}
-
-.wp-block-table p {
-	margin-top: 0;
-}
-
-.wp-block-table p:last-child {
-	margin-bottom: 0;
 }
 
 .wp-block-table__cell-content {
@@ -361,6 +308,23 @@ Description: Used to style Gutenberg Blocks in the editor.
 
 .edit-post-visual-editor .wp-block-separator.is-style-dots {
 	background-color: transparent;
+}
+
+/* Buttons */
+.wp-block-button .wp-block-button__link,
+.wp-block-file .wp-block-file__button {
+	display: inline-block;
+	padding: 15px 20px;
+	text-decoration: none;
+	text-shadow: none;
+	line-height: 1;
+	cursor: pointer;
+	outline: none;
+}
+
+/* Media & Text */
+.wp-block-media-text *:last-child {
+	margin-bottom: 0;
 }
 
 /*--------------------------------------------------------------
@@ -407,30 +371,26 @@ Description: Used to style Gutenberg Blocks in the editor.
 }
 
 /* Latest Posts, Archives, Categories */
-.editor-block-list__block .wp-block-archives,
-.editor-block-list__block .wp-block-categories,
-.editor-block-list__block .wp-block-latest-posts {
-	padding: 0 10px;
-	list-style: none;
-}
-
 .wp-block-archives li,
 .wp-block-categories li,
-.wp-block-latest-posts li {
+.wp-block-latest-posts li,
+.wp-block-rss li a {
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
 
 .wp-block-archives li a,
 .wp-block-categories li a,
-.wp-block-latest-posts li a {
+.wp-block-latest-posts li a,
+.wp-block-rss li a {
 	color: inherit;
 	text-decoration: none;
 }
 
 [data-align="center"] .wp-block-archives ul,
 [data-align="center"] .wp-block-categories ul,
-[data-align="center"] .wp-block-latest-posts ul {
+[data-align="center"] .wp-block-latest-posts ul,
+[data-align="center"] .wp-block-rss ul {
 	list-style-position: inside;
 }
 
@@ -443,24 +403,34 @@ Description: Used to style Gutenberg Blocks in the editor.
 }
 
 /* Search */
+.wp-block-search .wp-block-search__label {
+	display: block;
+	margin-bottom: 10px;
+	color: #616161;
+	font-size: 13px;
+}
+
 .wp-block-search .wp-block-search__input {
+	flex: 1;
 	padding: 5px 10px;
 	border: solid 1px #e0e0e0;
 	border-radius: 3px;
 	color: #616161;
-	font-family: inherit;
-	font-size: 1em;
+	width: 100%;
 }
 
 .wp-block-search .wp-block-search__button {
 	display: inline-block;
-	background: #e0e0e0;
+	padding: 10px;
+	background-color: #e0e0e0;
 	border: 0;
 	border-radius: 3px;
 	color: #424242;
-	font-family: inherit;
 	font-size: 14px;
 	font-weight: 700;
+	text-decoration: none;
+	text-shadow: none;
 	box-shadow: none;
+	line-height: 1;
 	cursor: pointer;
 }

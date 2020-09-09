@@ -354,22 +354,15 @@ a:active {
 /* More link */
 
 .colors-blue-gray .more-link {
-    background-color: #455a64;
-    color: #fff;
+	background-color: #455a64;
+	color: #fff;
 }
 
 .colors-blue-gray .more-link:hover,
 .colors-blue-gray .more-link:focus {
 	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(55, 71, 79, 0.2)), to(rgba(51, 67, 75, 0.2)));
 	background-image: linear-gradient(rgba(55, 71, 79, 0.2), rgba(51, 67, 75, 0.2));
-    color: #eceff1;
-}
-
-/* Entry content */
-
-.colors-blue-gray .entry-content h2,
-.colors-blue-gray .entry-content h3 {
-	border-color: #cfd8dc;
+	color: #eceff1;
 }
 
 /*--------------------------------------------------------------
@@ -397,8 +390,8 @@ a:active {
 
 .colors-blue-gray .comment-metadata a.comment-edit-link,
 .colors-blue-gray .comment-reply-link {
-    border-color: rgba(55, 71, 79, 0.3);
-    color: #455a64;
+	border-color: rgba(55, 71, 79, 0.3);
+	color: #455a64;
 }
 
 .colors-blue-gray .comment-notes,
@@ -483,31 +476,6 @@ a:active {
 .colors-blue-gray .wp-block-table td,
 .colors-blue-gray .wp-block-table th {
 	border-color: #cfd8dc;
-}
-
-/* Buttons */
-.colors-blue-gray .wp-block-button .wp-block-button__link,
-.colors-blue-gray .wp-block-file .wp-block-file__button {
-	background-color: #37474f;
-}
-
-.colors-blue-gray .wp-block-button .wp-block-button__link:hover,
-.colors-blue-gray .wp-block-button .wp-block-button__link:focus,
-.colors-blue-gray .wp-block-file .wp-block-file__button:hover,
-.colors-blue-gray .wp-block-file .wp-block-file__button:focus {
-	background-color: #37474f;
-	opacity: 0.8;
-}
-
-.colors-blue-gray .wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color),
-.colors-blue-gray .wp-block-button.is-style-outline .wp-block-button__link:focus:not(.has-text-color),
-.colors-blue-gray .wp-block-button.is-style-outline .wp-block-button__link:active:not(.has-text-color) {
-	color: #37474f;
-}
-
-.colors-blue-gray .wp-block-button.is-style-outline .wp-block-button__link:hover {
-	border-color: #37474f;
-	color: #37474f;
 }
 
 /* Separator */
